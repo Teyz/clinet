@@ -1,0 +1,44 @@
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "./typograhie.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $primary;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.largeImage {
+  margin-top: 12px;
+  max-width: 100%;
+  height: 280px;
+  object-fit: cover;
+
+  @include above(small) {
+    height: 100%;
+  }
+}
+
+.slidedown-enter-active,
+.slidedown-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slidedown-enter-to,
+.slidedown-leave-from {
+  overflow: hidden;
+  transform: translateY(0);
+}
+
+.slidedown-enter-from,
+.slidedown-leave-to {
+  overflow: hidden;
+  transform: translateY(-100%);
+}
