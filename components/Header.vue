@@ -1,7 +1,7 @@
 <template>
   <div class="headerRoot">
     <Transition name="slidedown">
-      <MobileMenu v-if="showMenu" @close-menu="toggleMenu" />
+      <MobileMenu v-if="showMenu" @close-menu="toggleMenu" :no-lang="noLang" />
     </Transition>
     <header :class="{ isSticky, isRelative }">
       <div class="container">
@@ -35,7 +35,7 @@
           class="logoDesktop"
           @click="goToHome('hero')"
         />
-        <div class="languageRoot">
+        <div class="languageRoot" v-if="!noLang">
           <span
             @click="changeLang('fr')"
             :class="{ isFrenchActive, lang: 'lang' }"
@@ -71,6 +71,10 @@ export default {
   name: "Header",
   props: {
     isRelative: {
+      type: Boolean,
+      default: false,
+    },
+    noLang: {
       type: Boolean,
       default: false,
     },

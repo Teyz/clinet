@@ -2,7 +2,7 @@
   <div class="innerBurger">
     <div></div>
     <div class="main">
-      <div class="languageRoot">
+      <div class="languageRoot" v-if="!noLang">
         <span
           @click="changeLang('fr')"
           :class="{ isFrenchActive, lang: 'lang' }"
@@ -37,6 +37,12 @@
 import { useI18n } from "vue-i18n";
 export default {
   name: "MobileMenu",
+  props: {
+    noLang: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup(props, { emit }) {
     const showMenu = ref(false);
     const toggleMenu = () => {
