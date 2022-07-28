@@ -3,7 +3,11 @@
     <div class="footer">
       <p>© 2022 Château Clinet</p>
       <ul>
-        <li><nuxt-link :to="{ path: '/' }">Legal / Credits</nuxt-link></li>
+        <li>
+          <nuxt-link :to="{ path: '/mentions-legales' }"
+            >Legal / Credits</nuxt-link
+          >
+        </li>
       </ul>
     </div>
   </footer>

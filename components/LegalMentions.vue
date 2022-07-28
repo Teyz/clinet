@@ -1,27 +1,26 @@
 <template>
   <div class="mentionsLegalesRoot">
     <div class="container">
-      <h1>legal & credits</h1>
+      <h1>MENTIONS LÉGALES</h1>
       <div class="mentionsLegalesContent">
         <h2>credits</h2>
         <p>
           This is a Taylor Yandell creation <br />
 
-          www.tayloryandell.com <br /><br />
+          <a href="">www.tayloryandell.com</a><br /><br />
 
           Site design and development: Taylor Yandell <br />
           Development: Bastien Rigaud <br />
           Text: Taylor Yandell, translated into French by Taylor Yandell <br />
-          Photography: L’Œil d’Eos, Taylor Yandell <br />
-          Illustrations: La Lettre M - Pauline Lenain
+          Photography: Julian Fourcade, Taylor Yandell <br />
+          Film: Taylor Yandell<br /><br />
         </p>
-        <h2>legal notice</h2>
+        <h2>legals</h2>
         <p>
           PLEASE READ THESE TERMS OF USE CAREFULLY BEFORE USING THIS WEBSITE
-          (http://www.ronanbyclinet.com//).<br />
-
-          Your use of this site constitutes acceptance of these Terms and
-          Conditions as at the date of your first use of the site.<br /><br />
+          (http://www.chateauclinet.com/). Your use of this site constitutes
+          acceptance of these Terms and Conditions as at the date of your first
+          use of the site. <br /><br />
 
           The information provided on this site is free of charge and for
           informational purposes only. By using this site, you accept the Legal
@@ -34,16 +33,16 @@
 
           These are the Terms of Use (“Terms”) which govern access to and use of
           the Groupe Clinet SARL corporate website (“the website”
-          (http://http://www.ronanbyclinet.com//). Our Privacy Policy explains
-          how Groupe Clinet SARL uses any Personal Data (as defined in the Data
+          (http://www.chateauclinet.com/). Our Privacy Policy explains how
+          Groupe Clinet SARL uses any Personal Data (as defined in the Data
           Protection Act 1998 (“the Act”)) you transmit to Groupe Clinet SARL
-          and what your obligations are in relation to such Personal Data.<br /><br />
+          and what your obligations are in relation to such Personal Data.
+          <br /><br />
 
           By accessing, using and downloading the website you are indicating
           your acceptance to be bound by these Terms and you re-affirm that
           acceptance every time you access the website. If you do not agree to
-          these Terms, please refrain from using our site.
-          <br /><br />
+          these Terms, please refrain from using our site. <br /><br />
 
           Regulatory Information required by the Electronic Commerce (EC
           Directive) Regulations 2002<br /><br />
@@ -344,18 +343,19 @@
     margin-bottom: 80px;
 
     @include above(small) {
-      font-size: 60px;
-      line-height: 59px;
+      font-size: 46px;
+      line-height: 52px;
+      letter-spacing: 9.2px;
       margin-top: 40px;
     }
 
     @include above(large) {
-      font-size: 81px;
+      font-size: 41px;
       line-height: 72px;
       margin-top: 72px;
     }
 
-    font-family: "SchnyderS";
+    font-family: "Baskerville";
     color: #260f01;
     font-weight: 100;
     letter-spacing: 2px;
@@ -363,56 +363,71 @@
   }
 
   h2 {
-    font-family: "SchnyderS";
-    color: #b71616;
-    font-weight: 100;
+    font-family: "Baskerville";
+    color: #ce1313;
+    font-weight: 500;
     letter-spacing: 2px;
     font-size: 32px;
-    font-style: italic;
     margin: 8px 0;
 
     @include above(small) {
-      ffont-size: 40px;
+      font-size: 32px;
+      line-height: 37px;
+      letter-spacing: 6.4px;
+      text-transform: uppercase;
     }
   }
 
   h3 {
-    font-family: "SchnyderS";
-    color: #260f01;
-    font-weight: 100;
+    font-family: "Baskerville";
+    color: #a9a9a9;
+    font-weight: 500;
     letter-spacing: 2px;
     font-size: 22px;
     margin: 8px 0;
+    text-transform: uppercase;
 
     @include above(small) {
-      font-size: 28px;
+      font-size: 22px;
+      line-height: 25px;
+      letter-spacing: 4.4px;
     }
   }
 
   h4 {
-    font-family: "SchnyderS";
-    color: #260f01;
-    font-weight: 100;
+    font-family: "Baskerville";
+    color: #333333;
+    font-weight: 500;
     letter-spacing: 2px;
     font-size: 22px;
     font-style: italic;
     margin: 8px 0;
+    text-transform: uppercase;
 
     @include above(small) {
-      font-size: 28px;
+      font-size: 20px;
+      letter-spacing: 4px;
+      line-height: 23px;
     }
   }
 
-  p {
-    font-family: "SchnyderS";
+  p,
+  a {
+    font-family: "Baskerville";
     color: #260f01;
-    font-weight: 100;
+    font-weight: 500;
     line-height: 28px;
     font-size: 16px;
 
     @include above(small) {
       font-size: 20px;
+      line-height: 23px;
     }
+  }
+
+  a {
+    color: #a9a9a9;
+    cursor: pointer;
   }
 }
 </style>
