@@ -1,14 +1,10 @@
 <template>
   <footer ref="footer">
     <div class="footer">
+      <p>© 2022 Château Clinet</p>
       <ul>
-        <li><a href="https://www.facebook.com/Ronan-By-Clinet-173378592719286">facebook</a></li>
-        <li><a href="https://www.instagram.com/ronanbyclinet/">instagram</a></li>
-        <li class="desktopLink">
-          <NuxtLink to="mentions-legales">{{ $t("footer-legal") }}</NuxtLink>
-        </li>
+        <li><nuxt-link :to="{ path: '/' }">Legal / Credits</nuxt-link></li>
       </ul>
-      <p>© 2022 ronan by clinet</p>
     </div>
   </footer>
 </template>
@@ -19,22 +15,21 @@ import { useStore } from "@/stores/store";
 export default {
   name: "Footer",
   setup() {
-
     const footer = ref(null);
 
-    const store = useStore()
+    const store = useStore();
 
     const { stop } = useIntersectionObserver(
       footer,
       ([{ isIntersecting }], observerElement) => {
-        if(isIntersecting){
-           store.setShowBackToHeader(false);
+        if (isIntersecting) {
+          store.setShowBackToHeader(false);
         }
-      },
-    )
+      }
+    );
 
     return {
-      footer
+      footer,
     };
   },
 };
@@ -42,29 +37,13 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  padding: 40px 72px 50px 72px;
+  padding: 32px 100px 32px 100px;
 
   .footer {
-    position: relative;
-
     @include above(small) {
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-
-    &:before {
-      content: "";
-      width: 100%;
-      height: 1px;
-      background-color: #260f01;
-      position: absolute;
-      top: -30%;
-      left: 0;
-
-      @include above(big) {
-        top: -100%;
-      }
     }
   }
   ul {
@@ -93,13 +72,14 @@ footer {
       }
 
       a {
-        font-size: 16px;
-        font-family: "SchnyderS";
-        font-weight: 100;
-        line-height: 18px;
+        font-family: "Baskerville";
+        font-size: 18px;
+        line-height: 14px;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
 
         @include above(big) {
-          font-size: 18px;
+          font-size: 12px;
         }
       }
 

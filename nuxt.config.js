@@ -17,13 +17,13 @@ export default defineNuxtConfig({
   buildModules: [
     // ...
     [
-      '@pinia/nuxt',
+      "@pinia/nuxt",
       {
         autoImports: [
           // automatically imports `usePinia()`
-          'defineStore',
+          "defineStore",
           // automatically imports `usePinia()` as `usePiniaStore()`
-          ['defineStore', 'definePiniaStore'],
+          ["defineStore", "definePiniaStore"],
         ],
       },
     ],
@@ -53,7 +53,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Ronan by Clinet | Vins AOC de Bordeaux",
+      title: "Château Clinet | Vins AOC de Bordeaux",
       htmlAttrs: {
         lang: "fr,en",
       },
@@ -61,11 +61,11 @@ export default defineNuxtConfig({
         {
           name: "title",
           lang: "fr",
-          content: "Ronan by Clinet | Vins AOC de Bordeaux",
+          content: "Château Clinet | Vins AOC de Bordeaux",
         },
         {
           name: "title",
-          lang: 'en',
+          lang: "en",
           content: "Ronan by Clinet | Bordeaux AOC Wines",
         },
         {

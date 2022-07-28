@@ -1,33 +1,58 @@
 <template>
   <div class="headerRoot">
     <Transition name="slidedown">
-       <MobileMenu v-if="showMenu" @close-menu='toggleMenu'/>
+      <MobileMenu v-if="showMenu" @close-menu="toggleMenu" />
     </Transition>
-    <header :class="{ isSticky }">
+    <header :class="{ isSticky, isRelative }">
       <div class="container">
         <ul class="nav">
-          <!-- <li><a href="#movie">Film</a></li> -->
-          <li v-if="route.name === 'mentions-legales'"><nuxt-link :to="{path: '/', hash: '#mantraHeader'}">Mantras</nuxt-link></li>
-          <li v-if="route.name === 'mentions-legales'"><nuxt-link :to="{ path: '/',hash:'#contact'}">Contact</nuxt-link></li>
-          <li v-if="route.name !== 'mentions-legales'"><a href="#mantraHeader">Mantras</a></li>
-          <li v-if="route.name !== 'mentions-legales'"><a href="#contact">Contact</a></li>
+          <li v-if="route.name === 'mentions-legales'">
+            <nuxt-link :to="{ path: '/', hash: '#mantraHeader' }"
+              >Histoire</nuxt-link
+            >
+          </li>
+          <li v-if="route.name === 'mentions-legales'">
+            <nuxt-link :to="{ path: '/', hash: '#contact' }"
+              >Sensation</nuxt-link
+            >
+          </li>
+          <li v-if="route.name === 'mentions-legales'">
+            <nuxt-link :to="{ path: '/', hash: '#contact' }">Contact</nuxt-link>
+          </li>
+          <li v-if="route.name !== 'mentions-legales'">
+            <a href="#mantraHeader">Histoire</a>
+          </li>
+          <li v-if="route.name !== 'mentions-legales'">
+            <a href="#contact">Sensation</a>
+          </li>
+          <li v-if="route.name !== 'mentions-legales'">
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
         <img
-          src="@/assets/img/logoMobile.svg"
+          src="@/assets/img/logo-mobile.svg"
           alt="Logo Ronan By Clinet"
           class="logoMobile"
           @click="goToHome('hero')"
         />
         <img
-          src="@/assets/img/logo.svg"
+          src="@/assets/img/logo-clinet.svg"
           alt="Logo Ronan By Clinet"
           class="logoDesktop"
           @click="goToHome('hero')"
         />
         <div class="languageRoot">
-          <span @click="changeLang('fr')" :class="{ isFrenchActive, lang: 'lang' }">FR</span>
+          <span
+            @click="changeLang('fr')"
+            :class="{ isFrenchActive, lang: 'lang' }"
+            >FR</span
+          >
           <span> | </span>
-          <span @click="changeLang('en')" :class="{ isEnglishActive , lang: 'lang' }">EN</span>
+          <span
+            @click="changeLang('en')"
+            :class="{ isEnglishActive, lang: 'lang' }"
+            >EN</span
+          >
         </div>
         <div class="menu-icon">
           <input
@@ -50,6 +75,12 @@ import { useWindowScroll } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 export default {
   name: "Header",
+  props: {
+    isRelative: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     const showMenu = ref(false);
     const toggleMenu = () => {
@@ -84,7 +115,7 @@ export default {
         isFrenchActive.value = true;
       }
       locale.value = lang;
-      if(route.name != 'mentions-legales'){
+      if (route.name != "mentions-legales") {
         const hero = document.getElementById("hero");
         hero.scrollIntoView();
       }
@@ -108,7 +139,7 @@ export default {
       isFrenchActive,
       isEnglishActive,
       goToHome,
-      route
+      route,
     };
   },
 };
@@ -127,8 +158,12 @@ header {
   width: 100%;
   padding: 24px;
 
+  &.isRelative {
+    position: relative;
+  }
+
   @include above(big) {
-    padding: 40px 80px;
+    padding: 32px 100px;
     &.isSticky {
       padding: 24px 80px;
     }
@@ -197,20 +232,20 @@ header {
       display: block;
     }
     span {
-      font-family: "SchnyderS";
-      font-weight: 100;
+      font-family: "Baskerville";
+      font-weight: 500;
       font-size: 14px;
-      letter-spacing: 2px;
-      line-height: 20px;
+      letter-spacing: 2.8px;
+      line-height: 16px;
       text-transform: uppercase;
       cursor: pointer;
 
-      &.lang{
-        &:hover{
-        color: $secondary;
+      &.lang {
+        &:hover {
+          color: $secondary;
         }
       }
-      
+
       &.isEnglishActive,
       &.isFrenchActive {
         color: $secondary;
@@ -237,11 +272,11 @@ header {
       }
 
       a {
-        font-family: "SchnyderS";
-        font-weight: 100;
+        font-family: "Baskerville";
+        font-weight: 500;
         font-size: 14px;
-        letter-spacing: 3px;
-        line-height: 20px;
+        letter-spacing: 2.8px;
+        line-height: 16px;
         text-transform: uppercase;
       }
 
