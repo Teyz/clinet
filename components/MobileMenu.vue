@@ -3,22 +3,29 @@
     <div></div>
     <div class="main">
       <div class="languageRoot">
-        <span @click="changeLang('fr')" :class="{ isFrenchActive, lang: 'lang' }">FR</span>
+        <span
+          @click="changeLang('fr')"
+          :class="{ isFrenchActive, lang: 'lang' }"
+          >FR</span
+        >
         <span> | </span>
-        <span @click="changeLang('en')" :class="{ isEnglishActive , lang: 'lang' }">EN</span>
+        <span
+          @click="changeLang('en')"
+          :class="{ isEnglishActive, lang: 'lang' }"
+          >EN</span
+        >
       </div>
       <ul class="nav">
         <!-- <li><a href="#movie">Film</a></li> -->
-        <li @click="toggleMenu"><a href="#mantraHeader">Mantras</a></li>
+        <li @click="toggleMenu"><a href="#mantraHeader">Accueil</a></li>
+        <li @click="toggleMenu"><a href="#contact">Histoire</a></li>
         <li @click="toggleMenu"><a href="#contact">Contact</a></li>
-      </ul>
-      <ul class="socialLinks">
-        <li><a href="https://www.facebook.com/Ronan-By-Clinet-173378592719286">facebook</a></li>
-        <li><a href="https://www.instagram.com/ronanbyclinet/">instagram</a></li>
       </ul>
     </div>
     <div class="footerContainer">
-      <NuxtLink to="mentions-legales" @click="toggleMenu">{{ $t("footer-legal") }}</NuxtLink>
+      <NuxtLink to="mentions-legales" @click="toggleMenu">{{
+        $t("footer-legal")
+      }}</NuxtLink>
       <div class="footer">
         <p>© 2022 ronan by clinet</p>
       </div>
@@ -30,10 +37,10 @@
 import { useI18n } from "vue-i18n";
 export default {
   name: "MobileMenu",
-    setup(props, { emit }) {
+  setup(props, { emit }) {
     const showMenu = ref(false);
     const toggleMenu = () => {
-      emit('close-menu');
+      emit("close-menu");
     };
 
     const isFrenchActive = ref(true);
@@ -106,36 +113,20 @@ export default {
   left: 0;
 
   a {
-    font-family: "SchnyderS";
+    font-family: "Baskerville";
   }
 
   .languageRoot {
     display: block;
     margin-bottom: 42px;
     text-align: center;
-  }
 
-  .logoMobile {
-    position: relative;
-    left: 0;
-    transform: translate(0);
-  }
-
-  .socialLinks {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 48px;
-
-    li {
-      margin: 0 6px;
-
-      a {
-        font-family: "SchnyderS";
-        color: #260f01;
-        font-size: 12px;
-        line-height: 18px;
-      }
+    span {
+      font-family: "Baskerville";
+      font-size: 8px;
+      letter-spacing: 1.6px;
+      line-height: 18px;
+      font-weight: 500;
     }
   }
 
@@ -148,13 +139,24 @@ export default {
     }
 
     a {
-      font-size: 28px;
-      font-weight: 100;
+      font-family: "Baskerville";
+      font-size: 14px;
+      letter-spacing: 2.8px;
+      line-height: 16px;
+      font-weight: 500;
     }
   }
 
   .footerContainer {
     text-align: center;
+
+    a {
+      font-family: "Baskerville";
+      font-size: 9px;
+      letter-spacing: 1.8px;
+      line-height: 18px;
+      font-weight: 500;
+    }
   }
 
   .footer {
@@ -164,8 +166,11 @@ export default {
 
     p {
       position: relative;
-      font-family: "1942";
-      font-size: 12px;
+      font-family: "Baskerville";
+      font-size: 9px;
+      letter-spacing: 1.8px;
+      line-height: 18px;
+      font-weight: 500;
     }
 
     &:before {

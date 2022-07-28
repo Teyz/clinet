@@ -30,12 +30,6 @@
           </li>
         </ul>
         <img
-          src="@/assets/img/logo-mobile.svg"
-          alt="Logo Ronan By Clinet"
-          class="logoMobile"
-          @click="goToHome('hero')"
-        />
-        <img
           src="@/assets/img/logo-clinet.svg"
           alt="Logo Ronan By Clinet"
           class="logoDesktop"
@@ -174,16 +168,6 @@ header {
     animation: smoothScroll 0.5s forwards;
     position: fixed;
     background-color: $primary;
-
-    .logoMobile {
-      cursor: pointer;
-      display: block;
-    }
-
-    .logoDesktop {
-      cursor: pointer;
-      display: none;
-    }
   }
 
   .container {
@@ -204,25 +188,6 @@ header {
     width: 100%;
     max-width: 155px;
     object-fit: contain;
-
-    display: none;
-
-    @include above(big) {
-      display: block;
-    }
-  }
-
-  .logoMobile {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 38px;
-    object-fit: cover;
-
-    @include above(big) {
-      display: none;
-    }
   }
 
   .languageRoot {

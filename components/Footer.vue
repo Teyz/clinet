@@ -37,14 +37,16 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  padding: 32px 100px 32px 100px;
+  padding: 25px 27px;
+
+  @include above(small) {
+    padding: 32px 100px 32px 100px;
+  }
 
   .footer {
-    @include above(small) {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   ul {
     display: flex;
@@ -73,13 +75,15 @@ footer {
 
       a {
         font-family: "Baskerville";
-        font-size: 18px;
-        line-height: 14px;
-        letter-spacing: 2.4px;
+        font-size: 8px;
+        line-height: 18px;
+        letter-spacing: 1.6px;
         text-transform: uppercase;
 
         @include above(big) {
           font-size: 12px;
+          letter-spacing: 2.4px;
+          line-height: 14px;
         }
       }
 
@@ -95,10 +99,8 @@ footer {
 
   p {
     @include typo-text-footer-mobile;
-    margin-top: 12px;
 
     @include above(big) {
-      margin-top: 0;
       @include typo-text-footer;
     }
   }
