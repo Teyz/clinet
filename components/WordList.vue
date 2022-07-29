@@ -1,12 +1,21 @@
 <template>
   <div class="wordListRoot">
     <ul>
-      <li class="wordListItem" @click="goToSlide(0)">{{ $t("mantra-1-wordlist") }}</li>
-      <li class="wordListItem" @click="goToSlide(1)">{{ $t("mantra-2-wordlist") }}</li>
-      <li class="wordListItem" @click="goToSlide(2)">{{ $t("mantra-3-wordlist") }}</li>
-      <li class="wordListItem" @click="goToSlide(3)">{{ $t("mantra-4-wordlist") }}</li>
-      <li class="wordListItem" @click="goToSlide(4)">{{ $t("mantra-5-wordlist") }}</li>
-      <li class="wordListItem" @click="goToSlide(5)">{{ $t("mantra-6-wordlist") }}</li>
+      <li class="wordListItem" @click="goToSlide(0)">
+        {{ $t("mantra-1-wordlist") }}
+      </li>
+      <li class="wordListItem" @click="goToSlide(1)">
+        {{ $t("mantra-2-wordlist") }}
+      </li>
+      <li class="wordListItem" @click="goToSlide(2)">
+        {{ $t("mantra-3-wordlist") }}
+      </li>
+      <li class="wordListItem" @click="goToSlide(3)">
+        {{ $t("mantra-4-wordlist") }}
+      </li>
+      <li class="wordListItem" @click="goToSlide(4)">
+        {{ $t("mantra-5-wordlist") }}
+      </li>
     </ul>
   </div>
 </template>
@@ -24,23 +33,22 @@ export default {
     const currentSlide = computed(() => props.currentSlide);
     const wordListItems = ref();
     onMounted(() => {
-       wordListItems.value = document.querySelectorAll('.wordListItem');
-       wordListItems.value.forEach((item, index) => {
-        if(index === props.currentSlide){
+      wordListItems.value = document.querySelectorAll(".wordListItem");
+      wordListItems.value.forEach((item, index) => {
+        if (index === props.currentSlide) {
           item.style.pointerEvents = "none";
         } else {
-           item.style.pointerEvents = "auto";
+          item.style.pointerEvents = "auto";
         }
       });
-    })
+    });
 
     watch(currentSlide, (newValue) => {
       wordListItems.value.forEach((item, index) => {
-        if(index === newValue){
+        if (index === newValue) {
           item.style.pointerEvents = "none";
-        }
-        else {
-           item.style.pointerEvents = "auto";
+        } else {
+          item.style.pointerEvents = "auto";
         }
       });
     });
@@ -69,16 +77,20 @@ export default {
     justify-content: center;
     align-items: center;
     li {
-      font-family: "SchnyderS";
-      color: #260F01;
-      font-size: 28px;
-      line-height: 52px;
-      margin: 0 16px;
+      font-family: "Baskerville";
+      color: #333333;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: 1.4px;
+      font-weight: 500;
+      margin: 0 8px;
       transition: all 0.5s ease;
       cursor: pointer;
       text-align: center;
+      text-transform: uppercase;
 
       @include above(big) {
+        margin: 0 16px;
         font-size: 44px;
         line-height: 61px;
         text-align: left;
@@ -90,14 +102,14 @@ export default {
       }
 
       &:first-child {
-        @include above(big){
-           margin-left: 0;
+        @include above(big) {
+          margin-left: 0;
         }
       }
 
       &:last-child {
-         @include above(big){
-           margin-right: 0;
+        @include above(big) {
+          margin-right: 0;
         }
       }
     }

@@ -16,7 +16,7 @@
       <div class="portalImage">
         <img src="@/assets/img/castleIllus.svg" alt="" />
       </div>
-      <nuxt-link :to="{ path: '/' }">
+      <nuxt-link :to="{ path: '/history' }">
         <div>
           The
           <span> Story </span>

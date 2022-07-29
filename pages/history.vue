@@ -1,13 +1,8 @@
 <template>
   <NuxtLayout name="custom">
-    <ScrollToTop />
-    <Transition name="fade">
-      <Loader v-if="loading" />
-    </Transition>
     <Hero />
     <Movie />
     <MantraSlider />
-    <Contact />
   </NuxtLayout>
 </template>
 
@@ -18,18 +13,17 @@ import { useStore } from "@/stores/store";
 export default {
   name: "CustomLayout",
   setup() {
-    const store = useStore()
+    const store = useStore();
     const loading = computed(() => store.$state.loading);
     const route = useRoute();
 
-
     onMounted(() => {
       if (route.hash) {
-        const hash = route.hash.replace('#', '');
+        const hash = route.hash.replace("#", "");
         setTimeout(() => {
-            let scrollTo = document.getElementById(hash);
-            scrollTo.scrollIntoView();
-        }, 100)
+          let scrollTo = document.getElementById(hash);
+          scrollTo.scrollIntoView();
+        }, 100);
       }
       disableScroll(true);
     });
@@ -38,7 +32,7 @@ export default {
       store.setLoading(false);
       disableScroll(false);
     }, 2500);
-    
+
     return { loading };
   },
 };

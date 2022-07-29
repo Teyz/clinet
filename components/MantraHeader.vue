@@ -1,19 +1,9 @@
 <template>
   <div class="mantraHeader" id="mantraHeader">
-    <img :src="slide.images?.mantra_header" alt="" />
-    <span class="sliderStep">Mantra {{ currentSlide + 1 }}/6</span>
-    <h2 v-if="reverseTitle">
-      <span>{{ $t(`mantra-${index}-title`) }}</span
-      >{{ $t(`mantra-${index}-subtitle`) }}
-    </h2>
-    <h2 v-else-if="redMiddleTitle">
-      {{ $t(`mantra-${index}-title`)
-      }}<span>{{ $t(`mantra-${index}-red-title`) }}</span>
+    <span class="sliderStep">Chapitre {{ currentSlide + 1 }}/6</span>
+    <h2>
+      {{ $t(`mantra-${index}-title`) }} <br />
       {{ $t(`mantra-${index}-subtitle`) }}
-    </h2>
-    <h2 v-else>
-      {{ $t(`mantra-${index}-title`)
-      }}<span>{{ $t(`mantra-${index}-subtitle`) }}</span>
     </h2>
     <MantraControls
       is-small
@@ -25,7 +15,7 @@
 </template>
 
 <script>
-import { useIntersectionObserver } from '@vueuse/core';
+import { useIntersectionObserver } from "@vueuse/core";
 export default {
   name: "MantraHeader",
   props: {
@@ -41,14 +31,6 @@ export default {
       type: Object,
       default: () => {},
     },
-    reverseTitle: {
-      type: Boolean,
-      default: false,
-    },
-    redMiddleTitle: {
-      type: Boolean,
-      default: false,
-    },
   },
   setup(props, { emit }) {
     const nextSlide = () => {
@@ -59,8 +41,7 @@ export default {
       emit("onPrev");
     };
 
-
-    return { nextSlide, prevSlide};
+    return { nextSlide, prevSlide };
   },
 };
 </script>
@@ -160,6 +141,7 @@ export default {
   }
 
   .sliderStep {
+    font-family: "Baskerville";
     font-size: 13px;
     line-height: 19px;
     letter-spacing: 2px;
@@ -167,33 +149,46 @@ export default {
     margin-top: 48px;
     text-align: center;
     display: block;
+    color: #ce1313;
+    position: relative;
+
+    &:before {
+      content: "";
+      background-color: #ce1313;
+      width: 5px;
+      height: 5px;
+      border-radius: 1000px;
+      position: absolute;
+      bottom: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
     @include above(small) {
-      font-size: 21px;
-      line-height: 29px;
+      font-size: 15px;
+      line-height: 17px;
+      letter-spacing: 3px;
     }
   }
 
   h2 {
     margin: 0 auto;
     max-width: 100%;
-    font-family: "SchnyderS";
+    font-family: "Baskerville";
     color: #260f01;
     font-size: 32px;
     line-height: 28px;
     margin: 16px auto 56px auto;
     text-align: center;
-    font-weight: 100;
-    font-style: italic;
+    font-weight: 500;
+    text-transform: uppercase;
 
     @include above(small) {
-      font-size: 65px;
-      line-height: 60px;
+      margin: 42px auto 56px auto;
+      font-size: 44px;
+      line-height: 46px;
+      letter-spacing: 8.8px;
       max-width: 75%;
-    }
-
-    span {
-      color: #b71616;
     }
   }
 }
