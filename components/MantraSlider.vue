@@ -1,5 +1,9 @@
 <template>
-  <div class="mantraSliderRoot" :class="{ animateRightLeft, animateLeftRight }" ref="showBackTopHeader">
+  <div
+    class="mantraSliderRoot"
+    :class="{ animateRightLeft, animateLeftRight }"
+    ref="showBackTopHeader"
+  >
     <Carousel
       ref="slider"
       :mouseDrag="false"
@@ -19,7 +23,10 @@
         />
       </slide>
     </Carousel>
-    <WordList @go-to-slide="(goToSlideNumber) => goToSlide(goToSlideNumber)" v-bind:currentSlide="currentSlide"/>
+    <WordList
+      @go-to-slide="(goToSlideNumber) => goToSlide(goToSlideNumber)"
+      v-bind:currentSlide="currentSlide"
+    />
   </div>
 </template>
 
@@ -32,9 +39,8 @@ import Mantra_2 from "./Mantra_2.vue";
 import Mantra_3 from "./Mantra_3.vue";
 import Mantra_4 from "./Mantra_4.vue";
 import Mantra_5 from "./Mantra_5.vue";
-import Mantra_6 from "./Mantra_6.vue";
 import { useStore } from "@/stores/store";
-import { useElementSize } from '@vueuse/core'
+import { useElementSize } from "@vueuse/core";
 
 export default {
   name: "MantraSlider",
@@ -46,7 +52,6 @@ export default {
     Mantra_3,
     Mantra_4,
     Mantra_5,
-    Mantra_6,
   },
   setup() {
     const animateRightLeft = ref(false);
@@ -91,14 +96,14 @@ export default {
 
     const showBackTopHeader = ref(null);
 
-    const store = useStore()
+    const store = useStore();
 
     const { stop } = useIntersectionObserver(
       showBackTopHeader,
       ([{ isIntersecting }], observerElement) => {
         store.setShowBackToHeader(isIntersecting);
-      },
-    )
+      }
+    );
 
     return {
       slider,
@@ -110,7 +115,7 @@ export default {
       slides,
       goToSlide,
       showBackTopHeader,
-      store
+      store,
     };
   },
 };
@@ -133,11 +138,11 @@ export default {
     visibility: hidden;
     opacity: 0;
 
-    @include above(big){
+    @include above(big) {
       width: 400%;
     }
 
-    @include above(large){
+    @include above(large) {
       width: 500%;
     }
   }
@@ -155,15 +160,14 @@ export default {
     visibility: hidden;
     opacity: 0;
 
-    @include above(big){
-       width: 400%;
+    @include above(big) {
+      width: 400%;
     }
 
-    @include above(large){
+    @include above(large) {
       width: 500%;
     }
   }
-
 
   @keyframes slideRightLeft {
     from {
@@ -229,7 +233,9 @@ export default {
   align-items: flex-start;
 }
 
-.carousel__viewport, .carousel__slide, .carousel__track{
+.carousel__viewport,
+.carousel__slide,
+.carousel__track {
   height: 100%;
 }
 </style>

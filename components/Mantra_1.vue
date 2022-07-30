@@ -8,14 +8,21 @@
       :slide="slide"
     />
     <MantraContent :slide="slide" :index="index" is-top />
+    <ChapterWords :slide="slide" />
+    <ChapterImages :slide="slide" />
     <MantraSimpleText :index="index" :slide="slide" />
-    <MantraImageText :index="index" :slide="slide" />
-    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" :currentSlide="currentSlide"/>
+    <MantraContent :slide="slide" :index="index" is-reverse only-second />
+    <MantraControls
+      @on-next="() => nextSlide()"
+      @on-prev="() => prevSlide()"
+      :currentSlide="currentSlide"
+      :index="index"
+    />
   </div>
 </template>
 
 <script>
-import { useResizeObserver, useIntersectionObserver } from '@vueuse/core'
+import { useResizeObserver, useIntersectionObserver } from "@vueuse/core";
 import { useStore } from "@/stores/store";
 export default {
   name: "Mantra",
@@ -34,26 +41,24 @@ export default {
     },
   },
   setup(props, { emit }) {
-    const el = ref(null)
+    const el = ref(null);
     const mantraSize = ref();
-    const store = useStore()
+    const store = useStore();
 
     const { stop } = useIntersectionObserver(
       el,
       ([{ isIntersecting }], observerElement) => {
-
-        if(isIntersecting){
+        if (isIntersecting) {
           store.setMantraSize(mantraSize.value);
         }
-
-      },
-    )
+      }
+    );
 
     useResizeObserver(el, (entries) => {
-      const entry = entries[0]
-      const { height } = entry.contentRect
+      const entry = entries[0];
+      const { height } = entry.contentRect;
       mantraSize.value = height;
-    })
+    });
 
     const nextSlide = () => {
       emit("onNext");
@@ -69,8 +74,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mantraContentRoot{
-  h3{
+.mantraContentRoot {
+  h3 {
     bottom: 0;
   }
 }

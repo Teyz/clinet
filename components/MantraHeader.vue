@@ -1,5 +1,5 @@
 <template>
-  <div class="mantraHeader" id="mantraHeader">
+  <div class="mantraHeader" id="chapter">
     <span class="sliderStep">Chapitre {{ currentSlide + 1 }}/6</span>
     <h2>
       {{ $t(`mantra-${index}-title`) }} <br />
@@ -10,6 +10,7 @@
       @on-next="() => nextSlide()"
       @on-prev="() => prevSlide()"
       :currentSlide="currentSlide"
+      :index="index"
     />
   </div>
 </template>
@@ -47,8 +48,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#mantraHeader {
-  scroll-margin-top: 190px;
+#chapter {
+  scroll-margin-top: 300px;
 }
 .mantraHeader {
   padding: 0 24px;
@@ -62,7 +63,7 @@ export default {
 
   @include above(small) {
     padding: 0 160px;
-    margin: 300px 0 360px 0;
+    margin: 250px 0 360px 0;
   }
 
   &:after {
@@ -146,7 +147,6 @@ export default {
     line-height: 19px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-top: 48px;
     text-align: center;
     display: block;
     color: #ce1313;

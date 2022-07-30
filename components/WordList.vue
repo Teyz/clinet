@@ -1,5 +1,6 @@
 <template>
   <div class="wordListRoot">
+    <img src="@/assets/img/logo-mobile.svg" alt="" />
     <ul>
       <li class="wordListItem" @click="goToSlide(0)">
         {{ $t("mantra-1-wordlist") }}
@@ -70,6 +71,19 @@ export default {
 .wordListRoot {
   max-width: 920px;
   margin: 32px auto 104px auto;
+  text-align: center;
+
+  @include above(big) {
+    max-width: 1330px;
+  }
+
+  img {
+    object-fit: cover;
+
+    @include above(big) {
+      margin-bottom: 72px;
+    }
+  }
 
   ul {
     display: flex;
@@ -88,11 +102,40 @@ export default {
       cursor: pointer;
       text-align: center;
       text-transform: uppercase;
+      position: relative;
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+
+      &:after {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 1000px;
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #8080804d;
+      }
 
       @include above(big) {
         margin: 0 16px;
-        font-size: 44px;
-        line-height: 61px;
+        font-size: 32px;
+        letter-spacing: 7.2px;
+        line-height: 46px;
+        text-align: left;
+        color: #00000029;
+      }
+
+      @include above(large) {
+        margin: 0 16px;
+        font-size: 36px;
+        letter-spacing: 7.2px;
+        line-height: 46px;
         text-align: left;
         color: #00000029;
       }

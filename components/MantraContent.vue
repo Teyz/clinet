@@ -1,6 +1,9 @@
 <template>
-  <div class="mantraContentRoot" :class="{ isReverse }">
-    <div class="firstBlock">
+  <div class="chapterContentRoot" :class="{ isReverse }">
+    <p class="tagline" v-if="!onlySecond">
+      ÉNIGMATIQUE ET <span>PUISSANT</span>
+    </p>
+    <div class="firstBlock" v-if="!onlySecond">
       <div class="headerImage">
         <img
           :src="slide.images?.mantra_content_image_1"
@@ -12,11 +15,17 @@
         <p>
           {{ $t(`mantra-${index}-content-text`) }}
         </p>
-        <div class="imageContent">
-          <img :src="slide.images?.mantra_content_image_2" alt="" />
-          <h3 v-if="lang == 'fr'" :class={isTop} >{{ $t(`mantra-${index}-content-citation`) }}</h3>
-          <h3 v-else :class={isTop} class="en">{{ $t(`mantra-${index}-content-citation`) }}</h3>
-        </div>
+      </div>
+    </div>
+    <div class="secondBlock">
+      <img :src="slide.images?.mantra_content_image_2" alt="" />
+      <div class="textImage">
+        <h2>
+          {{ $t(`mantra-${index}-content-title`) }}
+          <span>{{ $t(`mantra-${index}-content-subtitle`) }}</span>
+        </h2>
+        <p>{{ $t(`mantra-${index}-content-text-2`) }}</p>
+        <img :src="slide.images?.mantra_content_image_3" alt="" />
       </div>
     </div>
   </div>
@@ -35,62 +44,216 @@ export default {
       type: Number,
       default: 1,
     },
-    isTop: {
-      type: Boolean,
-      default: false,
-    },
     isReverse: {
       type: Boolean,
       default: false,
     },
+    onlySecond: {
+      type: Boolean,
+      default: false,
+    },
   },
-  setup(){
+  setup() {
     const { locale } = useI18n();
 
     const lang = computed(() => locale.value);
 
-    return { locale, lang }
-  }
+    return { locale, lang };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.mantraContentRoot {
+.chapterContentRoot {
   @include above(big) {
     padding: 0 160px;
   }
 
-    &.isReverse{
-      .headerImage {
-        &:after {
-          @include above(big){
-            right: 30%;
+  &.isReverse {
+    .secondBlock {
+      flex-direction: row-reverse;
+
+      .textImage {
+        @include above(big) {
+          margin-left: 0px;
+          margin-right: 12px;
+        }
+
+        h2 {
+          @include above(big) {
+            text-align: right;
+            margin-left: 0px;
+            margin-right: 24px;
+          }
+
+          @include above(large) {
+            padding: 0 64px 0 0;
+            font-size: 46px;
+          }
+
+          &:before {
             left: inherit;
+            right: -13px;
+
+            @include above(big) {
+              width: 62px;
+              left: inherit;
+              right: -13%;
+            }
+
+            @include above(large) {
+              width: 82px;
+              left: inherit;
+            }
           }
         }
       }
     }
+  }
+
+  .secondBlock {
+    @include above(big) {
+      margin-top: 240px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    & > img {
+      object-fit: cover;
+      width: 100%;
+
+      @include above(big) {
+        max-width: 500px;
+      }
+      @include above(large) {
+        max-width: 660px;
+      }
+    }
+
+    .textImage {
+      @include above(big) {
+        margin-left: 12px;
+      }
+      h2 {
+        font-size: 32px;
+        letter-spacing: 9.2px;
+        line-height: 52px;
+        color: #260f01;
+        position: relative;
+
+        @include above(big) {
+          font-size: 40px;
+          text-align: left;
+          margin-left: 24px;
+        }
+
+        @include above(large) {
+          padding: 0 64px 0 0;
+          font-size: 46px;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -17%;
+          transform: translateY(-50%);
+          background-color: #b71616;
+          width: 82px;
+          height: 1px;
+
+          @include above(big) {
+            width: 62px;
+            left: -13%;
+          }
+
+          @include above(large) {
+            width: 82px;
+            left: -17%;
+          }
+        }
+
+        span {
+          color: #ce1313;
+        }
+      }
+      p {
+        color: #333333b3;
+        font-size: 16px;
+        line-height: 23px;
+        text-align: left;
+        padding: 16px 0 80px 80px;
+        max-width: 550px;
+
+        @include above(big) {
+          padding: 0;
+          font-size: 18px;
+          margin: 0 auto;
+          max-width: 500px;
+          padding-bottom: 24px;
+          padding-top: 12px;
+        }
+
+        @include above(large) {
+          padding: 0 64px 0 0;
+          font-size: 20px;
+          max-width: 550px;
+        }
+      }
+      img {
+        object-fit: cover;
+        width: 100%;
+        display: block;
+
+        @include above(big) {
+          max-width: 660px;
+          max-height: 450px;
+        }
+      }
+    }
+  }
+
+  .tagline {
+    @include above(big) {
+      text-align: right;
+      font-size: 28px;
+      font-family: "Baskerville";
+      line-height: 28px;
+      letter-spacing: 5.6px;
+      margin-bottom: 64px;
+
+      span {
+        font-size: 28px;
+        font-family: "Baskerville";
+        line-height: 28px;
+        letter-spacing: 5.6px;
+        font-style: italic;
+        color: #ce1313;
+      }
+    }
+  }
+
   .headerImage {
     position: relative;
 
     &:after {
       content: "";
-      width: 1px;
-      height: 135px;
+      width: 80px;
+      height: 1px;
       background-color: #ae0721;
       position: absolute;
       left: 20%;
       bottom: -30%;
 
       @include above(small) {
-        height: 180px;
+        width: 80px;
         left: 30%;
       }
 
       @include above(big) {
-        height: 180px;
-        left: 10%;
-        bottom: -10%;
+        width: 80px;
+        left: -5%;
+        bottom: -96px;
       }
     }
   }
@@ -138,60 +301,24 @@ export default {
       font-size: 20px;
       line-height: 28px;
       text-align: left;
+      font-weight: 500;
+      font-family: "Baskerville";
 
-      @include above(small){
+      @include above(small) {
         max-width: 400px;
       }
 
       @include above(big) {
-        font-size: 16px;
-        margin: 0;
-        max-width: 300px;
+        font-size: 32px;
+        margin: 64px 0 0 64px;
+        line-height: 30px;
+        max-width: 570px;
       }
 
       @include above(large) {
         font-size: 20px;
         margin: 0;
         max-width: 400px;
-      }
-    }
-
-    .imageContent {
-      position: relative;
-    }
-
-    h3 {
-      color: #ae0721;
-      position: absolute;
-      right: 0;
-      bottom: -35%;
-      font-size: 51px;
-      line-height: 34px;
-      font-family: "Sebastian";
-      max-width: 250px;
-      -webkit-text-stroke: 0.5px #ae0721;
-
-       &.isTop{
-          bottom: -15%;
-
-           &.en{
-             bottom: -30%;
-          }
-       }
-
-      @include above(big) {
-        bottom: -30%;
-        font-size: 73px;
-        line-height: 53px;
-        max-width: 360px;
-
-        &.isTop{
-          bottom: -15%;
-
-          &.en{
-             bottom: -30%;
-          }
-        }
       }
     }
   }

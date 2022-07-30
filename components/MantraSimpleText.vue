@@ -1,6 +1,5 @@
 <template>
   <div class="mantraSimpleTextRoot">
-    <img :src="slide?.images?.illus_1" alt="" v-if="!noIllus" />
     <p>
       {{ $t(`mantra-${index}-simple-text`) }}
     </p>
@@ -19,10 +18,6 @@ export default {
       type: Object,
       default: () => {},
     },
-    noIllus: {
-      type: Boolean,
-      default: false,
-    },
   },
 };
 </script>
@@ -36,20 +31,6 @@ export default {
     padding: 320px 140px 144px 140px;
   }
 
-  img {
-    object-fit: cover;
-    width: 150px;
-    position: absolute;
-    left: -8%;
-    top: 12%;
-    z-index: 10;
-
-    @include above(big) {
-      left: -5%;
-      top: 15%;
-      width: 200px;
-    }
-  }
   p {
     max-width: 325px;
     text-align: center;
@@ -57,6 +38,7 @@ export default {
     line-height: 26px;
     margin: 0 auto;
     font-weight: 100;
+    color: #333333;
 
     @include above(small) {
       max-width: 1054px;
@@ -64,8 +46,8 @@ export default {
 
     @include above(big) {
       max-width: 1054px;
-      font-size: 40px;
-      line-height: 45px;
+      font-size: 28px;
+      line-height: 47px;
     }
   }
 }

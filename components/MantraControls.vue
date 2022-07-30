@@ -54,8 +54,12 @@
           </g>
         </g>
       </svg>
+      <span v-if="!isSmall && index === 1">Chapitre {{ index }}</span>
+      <span v-else-if="!isSmall && index > 1">Chapitre {{ index - 1 }}</span>
     </div>
     <div @click="nextSlide" :class="slide" class="next">
+      <span v-if="!isSmall && index === 5">Chapitre {{ index }}</span>
+      <span v-else-if="!isSmall && index < 5">Chapitre {{ index + 1 }}</span>
       <svg
         id="flechedroite"
         xmlns="http://www.w3.org/2000/svg"
@@ -127,6 +131,10 @@ export default {
       type: Number,
       default: 0,
     },
+    index: {
+      type: Number,
+      default: 0,
+    },
   },
   setup(props, { emit }) {
     const slide = computed(() => `slide-${props.currentSlide}`);
@@ -174,13 +182,36 @@ export default {
   }
 }
 
+.prev,
+.next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 3.2px;
+  }
+}
+
 .prev {
   pointer-events: auto;
+  span {
+    color: #ce1313;
+    margin-left: 12px;
+  }
+
   path {
     fill: #ce1313;
   }
   &.slide-0 {
     pointer-events: none;
+
+    span {
+      color: #cfc9c7;
+    }
     path {
       fill: #cfc9c7;
     }
@@ -189,19 +220,30 @@ export default {
 
 .next {
   pointer-events: auto;
+  span {
+    color: #ce1313;
+    margin-right: 12px;
+  }
   path {
     fill: #ce1313;
   }
   &.slide-0 {
     color: #ce1313;
     pointer-events: auto;
+
+    span {
+      color: #ce1313;
+    }
     path {
       fill: #ce1313;
     }
   }
 
-  &.slide-5 {
+  &.slide-4 {
     pointer-events: none;
+    span {
+      color: #cfc9c7;
+    }
     path {
       fill: #cfc9c7;
     }
