@@ -54,12 +54,20 @@
           </g>
         </g>
       </svg>
-      <span v-if="!isSmall && index === 1">Chapitre {{ index }}</span>
-      <span v-else-if="!isSmall && index > 1">Chapitre {{ index - 1 }}</span>
+      <span v-if="!isSmall && index === 1"
+        >{{ $t("chapter") }} {{ index }}</span
+      >
+      <span v-else-if="!isSmall && index > 1"
+        >{{ $t("chapter") }} {{ index - 1 }}</span
+      >
     </div>
     <div @click="nextSlide" :class="slide" class="next">
-      <span v-if="!isSmall && index === 5">Chapitre {{ index }}</span>
-      <span v-else-if="!isSmall && index < 5">Chapitre {{ index + 1 }}</span>
+      <span v-if="!isSmall && index === 5"
+        >{{ $t("chapter") }} {{ index }}</span
+      >
+      <span v-else-if="!isSmall && index < 5"
+        >{{ $t("chapter") }} {{ index + 1 }}</span
+      >
       <svg
         id="flechedroite"
         xmlns="http://www.w3.org/2000/svg"

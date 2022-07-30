@@ -2,7 +2,9 @@
   <div class="heroRoot" id="hero">
     <div class="container">
       <img src="@/assets/img/heroIllus.svg" alt="" />
-      <h1>L’HISTOIRE DE <span>CLINET</span></h1>
+      <h1>
+        {{ $t("title") }} <span>{{ $t("subtitle") }}</span>
+      </h1>
       <div class="discover">
         <a href="#chapter"
           >{{ $t("discover") }}
@@ -109,6 +111,7 @@ export default {
     line-height: 20px;
     letter-spacing: 3.6px;
     margin-top: 40px;
+    text-transform: uppercase;
 
     @include above(small) {
       font-size: 46px;
