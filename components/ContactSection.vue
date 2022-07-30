@@ -1,6 +1,6 @@
 <template>
   <section class="contactRoot" id="contact">
-    <img src="@/assets/img/mantra-1/photo1.webp" alt="" />
+    <img src="@/assets/img/contact.webp" alt="" />
     <div class="contactMain">
       <div class="divider"></div>
       <div class="contactContent">
@@ -81,7 +81,7 @@ img {
   height: 100%;
 
   .divider {
-    background-color: #8f8f8d;
+    background-color: white;
     width: 1px;
     height: 143px;
     left: 50%;

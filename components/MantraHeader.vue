@@ -75,8 +75,14 @@ export default {
     transform: translateX(-50%);
     display: none;
 
+    @include above(small) {
+      bottom: -70%;
+      height: 180px;
+      display: block;
+    }
+
     @include above(big) {
-      bottom: -65%;
+      bottom: -80%;
       height: 180px;
       display: block;
     }

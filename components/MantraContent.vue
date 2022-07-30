@@ -269,12 +269,6 @@ export default {
       bottom: -5%;
       transform: rotate(90deg);
 
-      @include above(small) {
-        width: 80px;
-        left: 30%;
-        transform: rotate(0deg);
-      }
-
       @include above(big) {
         width: 80px;
         left: -5%;

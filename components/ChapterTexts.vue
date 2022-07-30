@@ -33,6 +33,10 @@ export default {
     top: -70%;
     background-color: #ce1313;
 
+    @include above(small) {
+      top: -100%;
+    }
+
     @include above(big) {
       top: -50%;
     }

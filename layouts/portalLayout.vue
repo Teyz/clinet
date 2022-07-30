@@ -1,13 +1,13 @@
 <template>
   <div id="__root">
-    <Header is-relative/>
+    <Header is-relative />
     <slot />
-    <Footer />
+    <Footer no-border />
   </div>
 </template>
 
 <style lang="scss" scoped>
-#__root{
+#__root {
   width: 100vw;
   height: 100vh;
 }

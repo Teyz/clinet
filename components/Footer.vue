@@ -1,5 +1,5 @@
 <template>
-  <footer ref="footer">
+  <footer ref="footer" :class="{ noBorder }">
     <div class="footer">
       <p>© 2022 Château Clinet</p>
       <ul>
@@ -18,6 +18,12 @@ import { useStore } from "@/stores/store";
 
 export default {
   name: "Footer",
+  props: {
+    noBorder: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     const footer = ref(null);
 
@@ -46,6 +52,14 @@ footer {
 
   @include above(small) {
     padding: 32px 100px 32px 100px;
+  }
+
+  &.noBorder {
+    .footer {
+      &:before {
+        display: none;
+      }
+    }
   }
 
   .footer {
