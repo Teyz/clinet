@@ -17,7 +17,7 @@
       </div>
       <ul class="nav">
         <!-- <li><a href="#movie">Film</a></li> -->
-        <li @click="toggleMenu"><a href="#mantraHeader">Accueil</a></li>
+        <li @click="toggleMenu"><a href="#chapter">Accueil</a></li>
         <li @click="toggleMenu"><a href="#contact">Histoire</a></li>
         <li @click="toggleMenu"><a href="#contact">Contact</a></li>
       </ul>

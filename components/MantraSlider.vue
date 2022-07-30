@@ -40,7 +40,6 @@ import Mantra_3 from "./Mantra_3.vue";
 import Mantra_4 from "./Mantra_4.vue";
 import Mantra_5 from "./Mantra_5.vue";
 import { useStore } from "@/stores/store";
-import { useElementSize } from "@vueuse/core";
 
 export default {
   name: "MantraSlider",
@@ -54,42 +53,23 @@ export default {
     Mantra_5,
   },
   setup() {
-    const animateRightLeft = ref(false);
-    const animateLeftRight = ref(false);
     const slider = ref(null);
 
     const slides = getSliders();
 
     const currentSlide = computed(() => slider?.value?.data.currentSlide.value);
 
-    const addAnimationRightLeft = () => {
-      animateRightLeft.value = true;
-      setTimeout(() => {
-        animateRightLeft.value = false;
-      }, 1500);
-    };
-
-    const addAnimationLeftRight = () => {
-      animateLeftRight.value = true;
-      setTimeout(() => {
-        animateLeftRight.value = false;
-      }, 1500);
-    };
-
     const goToSlide = (goToSlideNumber) => {
-      addAnimationRightLeft();
       slider.value.slideTo(goToSlideNumber);
       slider.value.updateSlideWidth();
     };
 
     const nextSlide = () => {
-      addAnimationRightLeft();
       slider.value.next();
       slider.value.updateSlideWidth();
     };
 
     const prevSlide = () => {
-      addAnimationLeftRight();
       slider.value.prev();
       slider.value.updateSlideWidth();
     };
@@ -109,8 +89,6 @@ export default {
       slider,
       nextSlide,
       currentSlide,
-      animateLeftRight,
-      animateRightLeft,
       prevSlide,
       slides,
       goToSlide,
@@ -125,93 +103,6 @@ export default {
 .mantraSliderRoot {
   position: relative;
   overflow: hidden;
-  &:after {
-    position: absolute;
-    content: "";
-    width: 500%;
-    height: 100%;
-    background-color: white;
-    right: 0;
-    top: 0;
-    transform: translateX(100%);
-    z-index: 10;
-    visibility: hidden;
-    opacity: 0;
-
-    @include above(big) {
-      width: 400%;
-    }
-
-    @include above(large) {
-      width: 500%;
-    }
-  }
-
-  &:before {
-    position: absolute;
-    content: "";
-    width: 500%;
-    height: 100%;
-    background-color: white;
-    left: 0;
-    top: 0;
-    transform: translateX(-100%);
-    z-index: 10;
-    visibility: hidden;
-    opacity: 0;
-
-    @include above(big) {
-      width: 400%;
-    }
-
-    @include above(large) {
-      width: 500%;
-    }
-  }
-
-  @keyframes slideRightLeft {
-    from {
-      transform: translateX(100%);
-      right: 0;
-      top: 0;
-      visibility: visible;
-      opacity: 1;
-    }
-    to {
-      transform: translateX(0%);
-      right: 100%;
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideLeftRight {
-    from {
-      transform: translateX(-100%);
-      left: 0;
-      top: 0;
-      visibility: visible;
-      opacity: 1;
-    }
-    to {
-      transform: translateX(0%);
-      left: 100%;
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  &.animateRightLeft {
-    &:after {
-      animation: 0.5s ease slideRightLeft;
-    }
-  }
-
-  &.animateLeftRight {
-    &:before {
-      animation: 1s ease slideLeftRight;
-    }
-  }
 }
 .carousel__prev--in-active,
 .carousel__next--in-active {

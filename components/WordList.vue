@@ -55,8 +55,8 @@ export default {
     });
 
     const goToSlide = (goToSlideNumber) => {
-      const mantraHeader = document.getElementById("mantraHeader");
-      mantraHeader.scrollIntoView();
+      const chapter = document.getElementById("chapter");
+      chapter.scrollIntoView();
       setTimeout(() => {
         emit("goToSlide", goToSlideNumber);
       }, 1000);

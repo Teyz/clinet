@@ -147,16 +147,16 @@ export default {
   setup(props, { emit }) {
     const slide = computed(() => `slide-${props.currentSlide}`);
     const nextSlide = () => {
-      const mantraHeader = document.getElementById("mantraHeader");
-      mantraHeader.scrollIntoView();
+      const chapter = document.getElementById("chapter");
+      chapter.scrollIntoView();
       setTimeout(() => {
         emit("onNext");
       }, 1000);
     };
 
     const prevSlide = () => {
-      const mantraHeader = document.getElementById("mantraHeader");
-      mantraHeader.scrollIntoView();
+      const chapter = document.getElementById("chapter");
+      chapter.scrollIntoView();
       setTimeout(() => {
         emit("onPrev");
       }, 1000);
