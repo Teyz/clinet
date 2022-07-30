@@ -39,14 +39,17 @@ export default {
 
     .smallImage {
       width: 520px;
+      display: none;
 
       @include above(big) {
+        display: block;
         width: 400px;
         height: 400px;
         margin-right: 12px;
       }
       @include above(large) {
         width: 520px;
+        display: block;
       }
     }
 

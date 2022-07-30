@@ -96,7 +96,7 @@ export default {
 
   img {
     object-fit: cover;
-    max-width: 120px;
+    max-width: 250px;
     width: 100%;
 
     @include above(big) {
@@ -105,8 +105,9 @@ export default {
   }
 
   h1 {
-    font-size: 30px;
-    line-height: 27px;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 3.6px;
     margin-top: 40px;
 
     @include above(small) {
@@ -155,10 +156,10 @@ export default {
     position: relative;
     font-family: "SchnyderS";
     color: #260f01;
-    line-height: 16px;
+    line-height: 11px;
     font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 2.8px;
+    font-size: 10px;
+    letter-spacing: 2px;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
@@ -168,6 +169,13 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @include above(big) {
+      line-height: 16px;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 2.8px;
+    }
 
     svg {
       margin-top: 24px;

@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { useIntersectionObserver } from "@vueuse/core";
 export default {
   name: "MantraHeader",
   props: {
@@ -143,25 +142,37 @@ export default {
 
   .sliderStep {
     font-family: "Baskerville";
-    font-size: 13px;
-    line-height: 19px;
-    letter-spacing: 2px;
+    font-size: 10px;
+    line-height: 11px;
+    letter-spacing: 1.3px;
     text-transform: uppercase;
     text-align: center;
     display: block;
     color: #ce1313;
     position: relative;
 
+    @include above(big) {
+      font-size: 13px;
+      line-height: 19px;
+      letter-spacing: 2px;
+    }
+
     &:before {
       content: "";
       background-color: #ce1313;
-      width: 5px;
-      height: 5px;
+      width: 3px;
+      height: 3px;
       border-radius: 1000px;
       position: absolute;
-      bottom: -24px;
+      bottom: -12px;
       left: 50%;
       transform: translateX(-50%);
+
+      @include above(big) {
+        bottom: -24px;
+        width: 5px;
+        height: 5px;
+      }
     }
 
     @include above(small) {
@@ -176,9 +187,10 @@ export default {
     max-width: 100%;
     font-family: "Baskerville";
     color: #260f01;
-    font-size: 32px;
-    line-height: 28px;
-    margin: 16px auto 56px auto;
+    font-size: 30px;
+    line-height: 32px;
+    letter-spacing: 3.9px;
+    margin: 16px auto 24px auto;
     text-align: center;
     font-weight: 500;
     text-transform: uppercase;

@@ -70,15 +70,18 @@ export default {
 <style lang="scss" scoped>
 .wordListRoot {
   max-width: 920px;
-  margin: 32px auto 104px auto;
+  margin: 32px auto 64px auto;
   text-align: center;
 
   @include above(big) {
+    margin: 32px auto 104px auto;
     max-width: 1330px;
   }
 
   img {
     object-fit: cover;
+    width: 28px;
+    margin-bottom: 48px;
 
     @include above(big) {
       margin-bottom: 72px;

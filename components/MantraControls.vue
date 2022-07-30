@@ -161,7 +161,7 @@ export default {
 
 <style lang="scss" scoped>
 .mantraControlsRoot {
-  padding: 24px 48px;
+  padding: 24px 32px;
   margin: 42px auto 0 auto;
   display: flex;
   align-items: center;
@@ -175,6 +175,7 @@ export default {
     max-width: 180px;
     width: 100%;
     padding: 24px;
+    margin: 0 auto;
   }
 
   div {
@@ -190,9 +191,15 @@ export default {
 
   span {
     text-transform: uppercase;
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: 3.2px;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 2.4px;
+
+    @include above(big) {
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 3.2px;
+    }
   }
 }
 

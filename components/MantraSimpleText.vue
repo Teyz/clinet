@@ -25,17 +25,17 @@ export default {
 <style lang="scss" scoped>
 .mantraSimpleTextRoot {
   position: relative;
-  padding: 320px 24px 144px 24px;
+  padding: 120px 24px 120px 24px;
 
   @include above(big) {
-    padding: 320px 140px 144px 140px;
+    padding: 120px 140px 0px 140px;
   }
 
   p {
     max-width: 325px;
     text-align: center;
     font-size: 22px;
-    line-height: 26px;
+    line-height: 25px;
     margin: 0 auto;
     font-weight: 100;
     color: #333333;

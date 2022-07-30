@@ -1,0 +1,83 @@
+<template>
+  <section class="chaperTextsRoot">
+    <p class="smallText">{{ $t(`chapter-${index}-texts-1`) }}</p>
+    <p class="bigText">{{ $t(`chapter-${index}-texts-2`) }}</p>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "ChapterTexts",
+  props: {
+    index: {
+      type: Number,
+      default: 0,
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.chaperTextsRoot {
+  padding: 0 24px;
+  margin-top: 240px;
+  position: relative;
+
+  &:before {
+    content: "";
+    height: 141px;
+    width: 1px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -70%;
+    background-color: #ce1313;
+
+    @include above(big) {
+      top: -50%;
+    }
+  }
+
+  .smallText {
+    text-align: center;
+    font-size: 22px;
+    line-height: 25px;
+    position: relative;
+
+    &:before {
+      content: "";
+      height: 6px;
+      width: 6px;
+      border-radius: 1000px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -40px;
+      background-color: #ce1313;
+    }
+
+    @include above(big) {
+      font-size: 38px;
+      line-height: 47px;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+  }
+
+  .bigText {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 17px;
+    text-transform: uppercase;
+
+    @include above(big) {
+      font-size: 20px;
+      letter-spacing: 4px;
+      line-height: 28px;
+      max-width: 935px;
+      margin: 80px auto 0 auto;
+    }
+  }
+}
+</style>

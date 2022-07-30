@@ -22,6 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .chapterWordsRoot {
+  padding: 0 24px 104px 24px;
   @include above(big) {
     padding: 144px 104px;
   }
@@ -33,10 +34,17 @@ export default {
 
     li {
       color: #8080804d;
-      font-size: 36px;
-      line-height: 46px;
-      letter-spacing: 3.6px;
+      font-size: 23px;
+      line-height: 29px;
+      letter-spacing: 2.3px;
       position: relative;
+      margin-right: 24px;
+
+      @include above(big) {
+        font-size: 36px;
+        line-height: 46px;
+        letter-spacing: 3.6px;
+      }
 
       &:last-child {
         &:after {
@@ -50,10 +58,16 @@ export default {
         height: 5px;
         border-radius: 1000px;
         position: absolute;
-        right: -20px;
+        right: -12px;
         top: 50%;
         transform: translateY(-50%);
         background-color: #8080804d;
+
+        @include above(big) {
+          width: 5px;
+          height: 5px;
+          right: -20px;
+        }
       }
 
       @include above(big) {

@@ -8,7 +8,7 @@
 
 <style lang="scss" scoped>
 .movieRoot {
-  padding: 24px 0 0 0;
+  padding: 80px 24px 80px 24px;
 
   @include above(big) {
     padding: 200px 142px;
@@ -17,12 +17,12 @@
   &:before {
     content: "";
     width: 1px;
-    height: 135px;
+    height: 260px;
     background-color: $secondary;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -150%;
+    top: -75%;
     z-index: 11;
 
     @include above(big) {
@@ -39,7 +39,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -20%;
+    bottom: -40%;
 
     @include above(big) {
       bottom: -120px;

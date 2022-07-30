@@ -20,11 +20,13 @@
     <div class="secondBlock">
       <img :src="slide.images?.mantra_content_image_2" alt="" />
       <div class="textImage">
-        <h2>
-          {{ $t(`mantra-${index}-content-title`) }}
-          <span>{{ $t(`mantra-${index}-content-subtitle`) }}</span>
-        </h2>
-        <p>{{ $t(`mantra-${index}-content-text-2`) }}</p>
+        <div>
+          <h2>
+            {{ $t(`mantra-${index}-content-title`) }}
+            <span>{{ $t(`mantra-${index}-content-subtitle`) }}</span>
+          </h2>
+          <p>{{ $t(`mantra-${index}-content-text-2`) }}</p>
+        </div>
         <img :src="slide.images?.mantra_content_image_3" alt="" />
       </div>
     </div>
@@ -92,8 +94,7 @@ export default {
           }
 
           &:before {
-            left: inherit;
-            right: -13px;
+            left: -35%;
 
             @include above(big) {
               width: 62px;
@@ -121,33 +122,48 @@ export default {
     & > img {
       object-fit: cover;
       width: 100%;
+      display: none;
 
       @include above(big) {
         max-width: 500px;
+        display: block;
       }
       @include above(large) {
         max-width: 660px;
+        display: block;
       }
     }
 
     .textImage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column-reverse;
       @include above(big) {
         margin-left: 12px;
+        display: block;
       }
       h2 {
-        font-size: 32px;
-        letter-spacing: 9.2px;
-        line-height: 52px;
+        font-size: 20px;
+        letter-spacing: 4px;
+        line-height: 23px;
         color: #260f01;
         position: relative;
+        margin-top: 42px;
+        text-align: left;
+        margin-left: 12px;
 
         @include above(big) {
           font-size: 40px;
+          letter-spacing: 9.2px;
+          line-height: 52px;
           text-align: left;
+          margin-top: 0;
           margin-left: 24px;
         }
 
         @include above(large) {
+          margin-top: 0;
           padding: 0 64px 0 0;
           font-size: 46px;
         }
@@ -156,7 +172,7 @@ export default {
           content: "";
           position: absolute;
           top: 50%;
-          left: -17%;
+          left: -35%;
           transform: translateY(-50%);
           background-color: #b71616;
           width: 82px;
@@ -179,11 +195,11 @@ export default {
       }
       p {
         color: #333333b3;
-        font-size: 16px;
-        line-height: 23px;
+        font-size: 14px;
+        line-height: 16px;
         text-align: left;
-        padding: 16px 0 80px 80px;
-        max-width: 550px;
+        padding: 16px 0 80px 32px;
+        max-width: 300px;
 
         @include above(big) {
           padding: 0;
@@ -214,21 +230,28 @@ export default {
   }
 
   .tagline {
+    text-align: right;
+    font-size: 15px;
+    letter-spacing: 3px;
+    line-height: 15px;
+    margin: 0 32px 16px 0;
+    span {
+      font-size: 15px;
+      line-height: 15px;
+      letter-spacing: 3px;
+      font-style: italic;
+      color: #ce1313;
+    }
     @include above(big) {
-      text-align: right;
       font-size: 28px;
-      font-family: "Baskerville";
       line-height: 28px;
       letter-spacing: 5.6px;
       margin-bottom: 64px;
 
       span {
         font-size: 28px;
-        font-family: "Baskerville";
         line-height: 28px;
         letter-spacing: 5.6px;
-        font-style: italic;
-        color: #ce1313;
       }
     }
   }
@@ -242,18 +265,21 @@ export default {
       height: 1px;
       background-color: #ae0721;
       position: absolute;
-      left: 20%;
-      bottom: -30%;
+      left: 10%;
+      bottom: -5%;
+      transform: rotate(90deg);
 
       @include above(small) {
         width: 80px;
         left: 30%;
+        transform: rotate(0deg);
       }
 
       @include above(big) {
         width: 80px;
         left: -5%;
         bottom: -96px;
+        transform: rotate(0deg);
       }
     }
   }
@@ -296,16 +322,16 @@ export default {
     }
 
     p {
-      margin: 128px auto 104px auto;
-      max-width: 300px;
-      font-size: 20px;
-      line-height: 28px;
+      margin: 116px auto 64px auto;
+      max-width: 325px;
+      font-size: 17px;
+      line-height: 19px;
       text-align: left;
-      font-weight: 500;
-      font-family: "Baskerville";
 
       @include above(small) {
         max-width: 400px;
+        font-size: 20px;
+        line-height: 28px;
       }
 
       @include above(big) {
