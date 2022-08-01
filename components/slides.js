@@ -46,7 +46,7 @@ import mantra_6_image_citation_illus_2 from "@/assets/img/mantra-6/illus2.webp";
 export const getSliders = () => {
   return [
     {
-      components: "Mantra_1",
+      components: "Chapter_1",
       images: {
         mantra_content_image_1: mantra_1_content_image_1,
         mantra_content_image_2: mantra_1_content_image_2,
@@ -68,7 +68,7 @@ export const getSliders = () => {
       ],
     },
     {
-      components: "Mantra_2",
+      components: "Chapter_2",
       images: {
         mantra_content_image_1: mantra_2_content_image_1,
         mantra_content_image_2: mantra_2_content_image_2,
@@ -80,7 +80,7 @@ export const getSliders = () => {
       },
     },
     {
-      components: "Mantra_3",
+      components: "Chapter_3",
       images: {
         mantra_simpe_image: mantra_3_simpe_image,
         mantra_image_citation_1: mantra_3_image_citation_1,
@@ -91,7 +91,7 @@ export const getSliders = () => {
       },
     },
     {
-      components: "Mantra_4",
+      components: "Chapter_4",
       images: {
         mantra_image_text_image_1: mantra_4_image_text_image_1,
         mantra_simpe_image: mantra_4_simpe_image,
@@ -99,7 +99,7 @@ export const getSliders = () => {
       },
     },
     {
-      components: "Mantra_5",
+      components: "Chapter_5",
       images: {
         mantra_simpe_image: mantra_5_simpe_image,
         mantra_image_citation_1: mantra_5_image_citation_1,

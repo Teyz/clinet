@@ -44,8 +44,12 @@ export default {
   width: 100%;
   min-height: 600px;
   max-height: calc(100vh - 162px);
-  padding: 0 80px;
+  padding: 0 24px;
   height: 100%;
+
+  @include above(big) {
+    padding: 0 80px;
+  }
 
   &:before,
   &:after {
@@ -54,10 +58,14 @@ export default {
     background-color: #8f8f8d;
     opacity: 0.5;
     width: 1px;
-    height: 200px;
+    height: 100px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+
+    @include above(big) {
+      height: 200px;
+    }
   }
 
   &:before {
@@ -69,17 +77,20 @@ export default {
   }
 }
 video {
-  padding: 0 80px;
+  padding: 0 24px;
   height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
+  object-fit: cover;
+  width: 100vw;
   &.video-desktop {
     display: none;
   }
   @include above(small) {
     width: 100%;
     max-height: 100%;
+    padding: 0 80px;
     object-fit: cover;
     &.video-mobile {
       display: none;
@@ -100,11 +111,16 @@ video {
   position: relative;
   z-index: 1;
   text-align: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
+  @include above(big) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   a {
     div {
@@ -122,6 +138,12 @@ video {
       font-weight: 500;
       position: relative;
       transition: all 0.2s ease;
+
+      margin: 32px 0;
+
+      @include above(big) {
+        margin: 0;
+      }
 
       &:after,
       &:before {

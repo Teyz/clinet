@@ -34,11 +34,11 @@
 import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 import { getSliders } from "./slides";
-import Mantra_1 from "./Mantra_1.vue";
-import Mantra_2 from "./Mantra_2.vue";
-import Mantra_3 from "./Mantra_3.vue";
-import Mantra_4 from "./Mantra_4.vue";
-import Mantra_5 from "./Mantra_5.vue";
+import Chapter_1 from "./Mantra_1.vue";
+import Chapter_2 from "./Mantra_2.vue";
+import Chapter_3 from "./Mantra_3.vue";
+import Chapter_4 from "./Mantra_4.vue";
+import Chapter_5 from "./Mantra_5.vue";
 import { useStore } from "@/stores/store";
 
 export default {
@@ -46,11 +46,11 @@ export default {
   components: {
     Carousel,
     Slide,
-    Mantra_1,
-    Mantra_2,
-    Mantra_3,
-    Mantra_4,
-    Mantra_5,
+    Chapter_1,
+    Chapter_2,
+    Chapter_3,
+    Chapter_4,
+    Chapter_5,
   },
   setup() {
     const slider = ref(null);
