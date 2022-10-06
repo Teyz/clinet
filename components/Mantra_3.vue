@@ -6,17 +6,13 @@
       @on-prev="() => prevSlide()"
       :index="index"
       :slide="slide"
-      reverse-title
     />
-    <MantraSimpleImage :slide="slide" />
-    <MantraSimpleText :index="index" no-illus />
-    <MantraImageCitation
-      is-last-block
-      :index="index"
-      :slide="slide"
-      no-second-small
-      is-mantra-5
-    />
+    <MantraContent :slide="slide" :index="index" is-top />
+    <ChapterWords :slide="slide" />
+    <ChapterImages :slide="slide" />
+    <MantraSimpleText :index="index" :slide="slide" />
+    <MantraContent :slide="slide" :index="index" is-reverse only-second />
+    <ChapterTexts :index="index" />
     <MantraControls
       @on-next="() => nextSlide()"
       @on-prev="() => prevSlide()"
@@ -30,7 +26,7 @@
 import { useResizeObserver, useIntersectionObserver } from "@vueuse/core";
 import { useStore } from "@/stores/store";
 export default {
-  name: "Mantra_3",
+  name: "Mantra",
   props: {
     currentSlide: {
       type: Number,
@@ -68,6 +64,7 @@ export default {
     const nextSlide = () => {
       emit("onNext");
     };
+
     const prevSlide = () => {
       emit("onPrev");
     };
@@ -78,15 +75,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mantraSimpleImageRoot {
-  @include above(big) {
-    margin-top: 208px;
+.mantraContentRoot {
+  h3 {
+    bottom: 0;
   }
-}
-.mantraSimpleTextRoot {
-  padding-top: 144px;
-}
-.mantraImageCitationRoot {
-  margin-bottom: 12px;
 }
 </style>

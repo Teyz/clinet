@@ -1,7 +1,8 @@
 <template>
   <div class="chapterContentRoot" :class="{ isReverse }">
     <p class="tagline" v-if="!onlySecond">
-      ÉNIGMATIQUE ET <span>PUISSANT</span>
+      {{ $t(`mantra-${index}-tagline`)
+      }}<span> {{ $t(`mantra-${index}-subtagline`) }}</span>
     </p>
     <div class="firstBlock" v-if="!onlySecond">
       <div class="headerImage">
@@ -21,11 +22,18 @@
       <img :src="slide.images?.mantra_content_image_2" alt="" />
       <div class="textImage">
         <div>
-          <h2>
+          <h2 v-if="onlySecond">
+            {{ $t(`mantra-${index}-content-title-second`) }}
+            <span>{{ $t(`mantra-${index}-content-subtitle-second`) }}</span>
+          </h2>
+          <h2 v-else>
             {{ $t(`mantra-${index}-content-title`) }}
             <span>{{ $t(`mantra-${index}-content-subtitle`) }}</span>
           </h2>
-          <p>{{ $t(`mantra-${index}-content-text-2`) }}</p>
+          <p v-if="onlySecond">
+            {{ $t(`mantra-${index}-content-text-2-second`) }}
+          </p>
+          <p v-else>{{ $t(`mantra-${index}-content-text-2`) }}</p>
         </div>
         <img :src="slide.images?.mantra_content_image_3" alt="" />
       </div>
@@ -144,6 +152,7 @@ export default {
         display: block;
       }
       h2 {
+        text-transform: uppercase;
         font-size: 20px;
         letter-spacing: 4px;
         line-height: 23px;

@@ -7,9 +7,12 @@
       :index="index"
       :slide="slide"
     />
-    <MantraContent :slide="slide" :index="index" is-reverse />
-    <MantraSimpleText :slide="slide" :index="index" />
-    <MantraImageText :slide="slide" :index="index" big-illus />
+    <MantraContent :slide="slide" :index="index" is-top />
+    <ChapterWords :slide="slide" />
+    <ChapterImages :slide="slide" />
+    <MantraSimpleText :index="index" :slide="slide" />
+    <MantraContent :slide="slide" :index="index" is-reverse only-second />
+    <ChapterTexts :index="index" />
     <MantraControls
       @on-next="() => nextSlide()"
       @on-prev="() => prevSlide()"
@@ -23,7 +26,7 @@
 import { useResizeObserver, useIntersectionObserver } from "@vueuse/core";
 import { useStore } from "@/stores/store";
 export default {
-  name: "Mantra_2",
+  name: "Mantra",
   props: {
     currentSlide: {
       type: Number,
@@ -70,3 +73,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.mantraContentRoot {
+  h3 {
+    bottom: 0;
+  }
+}
+</style>

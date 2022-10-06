@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="mantraSliderRoot"
-    :class="{ animateRightLeft, animateLeftRight }"
-    ref="showBackTopHeader"
-  >
+  <div class="mantraSliderRoot" ref="showBackTopHeader">
     <Carousel
       ref="slider"
       :mouseDrag="false"
