@@ -2,7 +2,7 @@
   <div class="chapterContentRoot" :class="{ isReverse }">
     <p class="tagline" v-if="!onlySecond">
       {{ $t(`mantra-${index}-tagline`)
-      }}<span> {{ $t(`mantra-${index}-subtagline`) }}</span>
+      }}<span>{{ $t(`mantra-${index}-tagline-red`) }}</span>
     </p>
     <div class="firstBlock" v-if="!onlySecond">
       <div class="headerImage">
@@ -21,12 +21,8 @@
     <div class="secondBlock">
       <img :src="slide.images?.mantra_content_image_2" alt="" />
       <div class="textImage">
-        <div>
-          <h2 v-if="onlySecond">
-            {{ $t(`mantra-${index}-content-title-second`) }}
-            <span>{{ $t(`mantra-${index}-content-subtitle-second`) }}</span>
-          </h2>
-          <h2 v-else>
+        <div class="textImageContent">
+          <h2>
             {{ $t(`mantra-${index}-content-title`) }}
             <span>{{ $t(`mantra-${index}-content-subtitle`) }}</span>
           </h2>
@@ -35,7 +31,12 @@
           </p>
           <p v-else>{{ $t(`mantra-${index}-content-text-2`) }}</p>
         </div>
-        <img :src="slide.images?.mantra_content_image_3" alt="" />
+        <img
+          :src="slide.images?.mantra_content_image_3"
+          alt=""
+          v-if="!onlySecond"
+        />
+        <img :src="slide.images?.mantra_content_image_4" alt="" v-else />
       </div>
     </div>
   </div>
@@ -97,8 +98,8 @@ export default {
           }
 
           @include above(large) {
-            padding: 0 64px 0 0;
-            font-size: 46px;
+            padding: 0 0 18px 0;
+            font-size: 42px;
           }
 
           &:before {
@@ -111,8 +112,10 @@ export default {
             }
 
             @include above(large) {
-              width: 82px;
               left: inherit;
+              width: 82px;
+              top: 35%;
+              right: -20%;
             }
           }
         }
@@ -151,6 +154,12 @@ export default {
         margin-left: 12px;
         display: block;
       }
+
+      .textImageContent {
+        @include above(large) {
+          margin-bottom: 64px;
+        }
+      }
       h2 {
         text-transform: uppercase;
         font-size: 20px;
@@ -173,8 +182,8 @@ export default {
 
         @include above(large) {
           margin-top: 0;
-          padding: 0 64px 0 0;
-          font-size: 46px;
+          //padding: 0 64px 0 0;
+          font-size: 42px;
         }
 
         &:before {
@@ -194,7 +203,7 @@ export default {
 
           @include above(large) {
             width: 82px;
-            left: -17%;
+            left: -20%;
           }
         }
 
@@ -220,9 +229,9 @@ export default {
         }
 
         @include above(large) {
-          padding: 0 64px 0 0;
-          font-size: 20px;
-          max-width: 550px;
+          padding: 0 0 0 48px;
+          font-size: 18px;
+          max-width: 500px;
         }
       }
       img {
@@ -335,6 +344,7 @@ export default {
         max-width: 400px;
         font-size: 20px;
         line-height: 28px;
+        margin: 64px 0 0 64px;
       }
 
       @include above(big) {
@@ -345,6 +355,7 @@ export default {
       }
 
       @include above(large) {
+        margin: 64px 0 0 64px !important;
         font-size: 20px;
         margin: 0;
         max-width: 400px;
