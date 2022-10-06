@@ -7,9 +7,11 @@
       :index="index"
       :slide="slide"
     />
-    <MantraContent :slide="slide" :index="index" is-reverse />
+    <MantraContent :slide="slide" :index="index" />
     <MantraSimpleText :slide="slide" :index="index" />
+    <MantraSimpleImage :slide="slide" />
     <MantraImageText :slide="slide" :index="index" big-illus />
+    <ChapterTexts :index="index" />
     <MantraControls
       @on-next="() => nextSlide()"
       @on-prev="() => prevSlide()"

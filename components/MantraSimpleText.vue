@@ -49,6 +49,12 @@ export default {
       font-size: 28px;
       line-height: 47px;
     }
+
+     @include above(large) {
+      max-width: 1000px;
+      font-size: 38px;
+      line-height: 47px;
+    }
   }
 }
 </style>

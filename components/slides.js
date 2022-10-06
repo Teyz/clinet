@@ -9,6 +9,7 @@ import mantra_1_image_text_image_illus from "@/assets/img/mantra-1/illus2.webp";
 import chapter_1_images_1 from "@/assets/img/chapter-1/photo4.webp";
 import chapter_1_images_2 from "@/assets/img/chapter-1/photo5.webp";
 import chapter_1_images_3 from "@/assets/img/chapter-1/photo6.webp";
+import mantra_1_content_image_4 from "@/assets/img/chapter-1/photo7.webp";
 
 import mantra_2_content_image_1 from "@/assets/img/mantra-2/photo1.webp";
 import mantra_2_content_image_2 from "@/assets/img/mantra-2/photo2.webp";
@@ -51,6 +52,7 @@ export const getSliders = () => {
         mantra_content_image_1: mantra_1_content_image_1,
         mantra_content_image_2: mantra_1_content_image_2,
         mantra_content_image_3: mantra_1_content_image_3,
+        mantra_content_image_4: mantra_1_content_image_4,
         illus_1: mantra_1_illus_1,
         mantra_image_text_image_1: mantra_1_image_text_image_1,
         mantra_image_text_image_2: mantra_1_image_text_image_2,
