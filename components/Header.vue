@@ -116,7 +116,6 @@ export default {
       )
         .toLowerCase()
         .substr(0, 2);
-      console.log(browserLang);
       if (browserLang === "en") {
         isEnglishActive.value === true;
         isFrenchActive.value === false;

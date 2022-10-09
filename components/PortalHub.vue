@@ -161,11 +161,19 @@ video {
       }
 
       &:after {
-        right: 10%;
+        right: -10%;
+
+        @include above(big) {
+          right: 10%;
+        }
       }
 
       &:before {
-        left: 10%;
+        left: -10%;
+
+        @include above(big) {
+          left: 10%;
+        }
       }
 
       span {
