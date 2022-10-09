@@ -8,9 +8,16 @@
       :slide="slide"
       red-middle-title
     />
-    <MantraSimpleText :index="index" no-illus />
-    <MantraImageText is-citation :index="index" :slide="slide" is-mantra-4 />
-    <MantraSimpleImage :slide="slide" />
+    <MantraContent :slide="slide" :index="index" is-top />
+    <MantraSimpleText :slide="slide" :index="index" />
+    <MantraContent
+      :slide="slide"
+      :index="index"
+      is-reverse
+      only-second
+      class="mantraContentSecond"
+    />
+    <ChapterTexts :index="index" no-first-text />
     <MantraControls
       @on-next="() => nextSlide()"
       @on-prev="() => prevSlide()"
@@ -71,19 +78,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.mantraHeader {
-  margin-bottom: 0;
-
-  @include above(big) {
-    margin-bottom: 120px;
-  }
-}
-.mantraSimpleTextRoot {
-  padding-top: 144px;
-
-  @include above(big) {
-    padding-top: 320px;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

@@ -1,6 +1,8 @@
 <template>
-  <section class="chaperTextsRoot">
-    <p class="smallText">{{ $t(`chapter-${index}-texts-1`) }}</p>
+  <section class="chaperTextsRoot" :class="{ noFirstText }">
+    <p class="smallText" v-if="!noFirstText">
+      {{ $t(`chapter-${index}-texts-1`) }}
+    </p>
     <p class="bigText">{{ $t(`chapter-${index}-texts-2`) }}</p>
   </section>
 </template>
@@ -12,6 +14,10 @@ export default {
     index: {
       type: Number,
       default: 0,
+    },
+    noFirstText: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -39,6 +45,20 @@ export default {
 
     @include above(big) {
       top: -50%;
+    }
+  }
+
+  &.noFirstText {
+    &:before {
+      top: -240px;
+
+      @include above(small) {
+        top: -240px;
+      }
+
+      @include above(big) {
+        top: -320%;
+      }
     }
   }
 

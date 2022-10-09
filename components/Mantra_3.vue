@@ -8,10 +8,16 @@
       :slide="slide"
     />
     <MantraContent :slide="slide" :index="index" is-top />
-    <ChapterWords :slide="slide" />
-    <ChapterImages :slide="slide" />
-    <MantraSimpleText :index="index" :slide="slide" />
-    <MantraContent :slide="slide" :index="index" is-reverse only-second />
+    <MantraSimpleText :slide="slide" :index="index" />
+    <MantraSimpleImage :slide="slide" />
+    <ChapterWords :slide="slide" class="chapterWordsRoot" />
+    <MantraContent
+      :slide="slide"
+      :index="index"
+      is-reverse
+      only-second
+      class="mantraContentSecond"
+    />
     <ChapterTexts :index="index" />
     <MantraControls
       @on-next="() => nextSlide()"
@@ -79,5 +85,12 @@ export default {
   h3 {
     bottom: 0;
   }
+}
+
+.mantraContentSecond {
+  padding-bottom: 130px;
+}
+.chapterWordsRoot {
+  padding-bottom: 0;
 }
 </style>

@@ -18,8 +18,13 @@
         </p>
       </div>
     </div>
-    <div class="secondBlock">
-      <img :src="slide.images?.mantra_content_image_2" alt="" />
+    <div class="secondBlock" :class="{ onlySecond }">
+      <img
+        :src="slide.images?.mantra_content_image_2"
+        alt=""
+        v-if="!onlySecond"
+      />
+      <img :src="slide.images?.mantra_content_image_5" alt="" v-else />
       <div class="textImage">
         <div class="textImageContent">
           <h2>
@@ -127,8 +132,10 @@ export default {
       }
     }
   }
-
   .secondBlock {
+    &.onlySecond {
+      margin-top: 0;
+    }
     @include above(big) {
       margin-top: 240px;
       display: flex;
@@ -177,7 +184,7 @@ export default {
         margin-left: 12px;
 
         @include above(big) {
-          font-size: 40px;
+          font-size: 32px;
           letter-spacing: 9.2px;
           line-height: 52px;
           text-align: left;
@@ -226,7 +233,7 @@ export default {
 
         @include above(big) {
           padding: 0;
-          font-size: 18px;
+          font-size: 16px;
           margin: 0 auto;
           max-width: 500px;
           padding-bottom: 24px;

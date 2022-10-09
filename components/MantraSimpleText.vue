@@ -28,7 +28,7 @@ export default {
   padding: 120px 24px 120px 24px;
 
   @include above(big) {
-    padding: 120px 140px 0px 140px;
+    padding: 120px 140px 120px 140px;
   }
 
   p {
@@ -50,7 +50,7 @@ export default {
       line-height: 47px;
     }
 
-     @include above(large) {
+    @include above(large) {
       max-width: 1000px;
       font-size: 38px;
       line-height: 47px;

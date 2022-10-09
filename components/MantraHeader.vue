@@ -1,6 +1,6 @@
 <template>
   <div class="mantraHeader" id="chapter">
-    <span class="sliderStep">{{ $t("chapter") }} {{ currentSlide + 1 }}/6</span>
+    <span class="sliderStep">{{ $t("chapter") }} {{ currentSlide + 1 }}/5</span>
     <h2>
       {{ $t(`mantra-${index}-title`) }}
     </h2>

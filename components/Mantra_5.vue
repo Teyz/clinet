@@ -7,18 +7,12 @@
       :index="index"
       :slide="slide"
     />
-    <MantraSimpleImage :slide="slide" />
-    <MantraSimpleText no-illus :index="index" />
-    <MantraImageCitation
-      :index="index"
-      :slide="slide"
-      no-second-small
-      is-last-block
-      show-last-illus
-      last-block-margin-top
-      second-illus-small
-      is-mantra-5
-    />
+    <MantraContent :slide="slide" :index="index" is-top />
+    <MantraSimpleText :index="index" :slide="slide" />
+    <MantraContent :slide="slide" :index="index" is-reverse only-second />
+    <MantraSimpleText :index="index" :slide="slide" />
+    <ChapterImages :slide="slide" />
+    <ChapterTexts :index="index" />
     <MantraControls
       @on-next="() => nextSlide()"
       @on-prev="() => prevSlide()"
