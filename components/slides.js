@@ -39,6 +39,7 @@ export const getSliders = () => {
         mantra_content_image_1: mantra_1_content_image_1,
         mantra_content_image_2: mantra_1_content_image_2,
         mantra_content_image_3: mantra_1_content_image_3,
+        mantra_content_image_4: mantra_1_content_image_4,
         mantra_image_text_image_1: mantra_1_image_text_image_1,
         mantra_image_text_image_2: mantra_1_image_text_image_2,
         mantra_image_text_image_3: mantra_1_image_text_image_3,

@@ -205,7 +205,7 @@ export default {
       font-size: 44px;
       line-height: 46px;
       letter-spacing: 8.8px;
-      max-width: 75%;
+      max-width: 40%;
     }
   }
 }

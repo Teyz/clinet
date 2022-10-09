@@ -23,8 +23,13 @@
       <div class="textImage">
         <div class="textImageContent">
           <h2>
-            {{ $t(`mantra-${index}-content-title`) }}
-            <span>{{ $t(`mantra-${index}-content-subtitle`) }}</span>
+            {{ $t(`mantra-${index}-content-title-${onlySecond}`) }}
+            <span v-if="!onlySecond">{{
+              $t(`mantra-${index}-content-subtitle-${onlySecond}`)
+            }}</span>
+            <template v-else>
+              {{ $t(`mantra-${index}-content-subtitle-${onlySecond}`) }}
+            </template>
           </h2>
           <p v-if="onlySecond">
             {{ $t(`mantra-${index}-content-text-2-second`) }}
@@ -92,7 +97,7 @@ export default {
 
         h2 {
           @include above(big) {
-            text-align: right;
+            text-align: left;
             margin-left: 0px;
             margin-right: 24px;
           }
