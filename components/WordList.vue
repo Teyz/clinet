@@ -74,13 +74,13 @@ export default {
   text-align: center;
 
   @include above(big) {
-    margin: 32px auto 104px auto;
+    margin: 100px auto 104px;
     max-width: 1330px;
   }
 
   img {
     object-fit: cover;
-    width: 28px;
+    width: 48px;
     margin-bottom: 48px;
 
     @include above(big) {
@@ -106,6 +106,7 @@ export default {
       text-align: center;
       text-transform: uppercase;
       position: relative;
+      margin-bottom: 12px;
 
       &:last-child {
         &:after {

@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 .chaperTextsRoot {
   padding: 0 24px;
-  margin-top: 240px;
+  margin-top: 380px;
   position: relative;
 
   &:before {
@@ -44,7 +44,7 @@ export default {
     }
 
     @include above(big) {
-      top: -50%;
+      top: -60%;
     }
   }
 
@@ -81,7 +81,7 @@ export default {
     }
 
     @include above(big) {
-      font-size: 38px;
+      font-size: 36px;
       line-height: 47px;
       max-width: 1050px;
       margin: 0 auto;
@@ -96,7 +96,7 @@ export default {
     text-transform: uppercase;
 
     @include above(big) {
-      font-size: 20px;
+      font-size: 18px;
       letter-spacing: 4px;
       line-height: 28px;
       max-width: 935px;

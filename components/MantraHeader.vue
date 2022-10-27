@@ -189,7 +189,7 @@ export default {
 
   h2 {
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 50%;
     font-family: "Baskerville";
     color: #260f01;
     font-size: 30px;
@@ -201,7 +201,7 @@ export default {
     text-transform: uppercase;
 
     @include above(small) {
-      margin: 42px auto 56px auto;
+      margin: 42px 160px 40px 160px;
       font-size: 44px;
       line-height: 46px;
       letter-spacing: 8.8px;

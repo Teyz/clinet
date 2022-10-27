@@ -112,6 +112,7 @@ export default {
     letter-spacing: 3.6px;
     margin-top: 40px;
     text-transform: uppercase;
+    font-family: "Baskerville";
 
     @include above(small) {
       font-size: 46px;
@@ -167,7 +168,6 @@ export default {
     text-transform: uppercase;
     text-align: center;
     margin-top: 24px;
-    margin-bottom: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;

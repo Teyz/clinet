@@ -129,7 +129,7 @@ video {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #8f8f8d;
+      color: rgba($color: #ffffff, $alpha: 0.5);
       font-family: "Baskerville";
       text-transform: uppercase;
       font-size: 20px;
@@ -164,7 +164,7 @@ video {
         right: -10%;
 
         @include above(big) {
-          right: 10%;
+          right: 20%;
         }
       }
 
@@ -172,13 +172,13 @@ video {
         left: -10%;
 
         @include above(big) {
-          left: 10%;
+          left: 20%;
         }
       }
 
       span {
         font-family: "Baskerville";
-        color: #8f8f8d;
+        color: rgba($color: #ffffff, $alpha: 0.5);
         font-size: 40px;
         font-weight: 400;
         text-align: center;

@@ -199,7 +199,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    max-width: 155px;
+    max-width: 140px;
     object-fit: contain;
   }
 
@@ -244,6 +244,7 @@ header {
 
     li {
       margin: 0 24px;
+      transition: all 0.2s ease;
 
       &:hover {
         color: $secondary;

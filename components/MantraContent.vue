@@ -137,10 +137,16 @@ export default {
       margin-top: 0;
     }
     @include above(big) {
-      margin-top: 240px;
+      margin-top: 180px;
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
+    }
+    @include above(large) {
+      margin-top: 180px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
     }
     & > img {
       object-fit: cover;
@@ -173,6 +179,7 @@ export default {
         }
       }
       h2 {
+        font-family: "Baskerville";
         text-transform: uppercase;
         font-size: 20px;
         letter-spacing: 4px;
@@ -241,8 +248,9 @@ export default {
         }
 
         @include above(large) {
-          padding: 0 0 0 48px;
           font-size: 18px;
+          line-height: 18px;
+          margin-top: 10px;
           max-width: 500px;
         }
       }
@@ -260,6 +268,7 @@ export default {
   }
 
   .tagline {
+    font-family: "Baskerville";
     text-align: right;
     font-size: 15px;
     letter-spacing: 3px;
@@ -273,13 +282,14 @@ export default {
       color: #ce1313;
     }
     @include above(big) {
-      font-size: 28px;
+      font-family: "Baskerville";
+      font-size: 24px;
       line-height: 28px;
       letter-spacing: 5.6px;
       margin-bottom: 64px;
 
       span {
-        font-size: 28px;
+        font-size: 24px;
         line-height: 28px;
         letter-spacing: 5.6px;
       }

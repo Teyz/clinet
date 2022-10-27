@@ -176,7 +176,7 @@ export default {
   justify-content: space-between;
 
   @include above(big) {
-    padding: 24px 200px;
+    padding: 20px 380px;
   }
 
   &.isSmall {
@@ -202,6 +202,7 @@ export default {
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 2.4px;
+    font-family: "Baskerville";
 
     @include above(big) {
       font-size: 16px;

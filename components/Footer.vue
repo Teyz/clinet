@@ -71,7 +71,7 @@ footer {
       content: "";
       width: 90%;
       height: 1px;
-      background-color: #260f01;
+      background-color: #b7b7b7;
       position: absolute;
       top: -30%;
       left: 50%;
