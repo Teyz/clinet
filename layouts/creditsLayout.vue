@@ -1,6 +1,6 @@
 <template>
   <div id="__root">
-    <Header no-lang />
+    <Header />
     <slot />
     <Footer />
   </div>

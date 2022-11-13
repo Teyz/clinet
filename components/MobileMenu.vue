@@ -27,7 +27,7 @@
         $t("footer-legal")
       }}</NuxtLink>
       <div class="footer">
-        <p>© 2022 ronan by clinet</p>
+        <p>© 2022 CHÂTEAU CLINET</p>
       </div>
     </div>
   </div>
@@ -101,6 +101,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+* {
+  text-transform: uppercase;
+}
 .innerBurger {
   width: 100vw;
   height: 100vh;
@@ -148,7 +151,7 @@ export default {
       font-family: "Baskerville";
       font-size: 14px;
       letter-spacing: 2.8px;
-      line-height: 16px;
+      line-height: 24px;
       font-weight: 500;
     }
   }

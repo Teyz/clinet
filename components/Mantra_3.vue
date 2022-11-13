@@ -7,7 +7,7 @@
       :index="index"
       :slide="slide"
     />
-    <MantraContent :slide="slide" :index="index" is-top />
+    <MantraContent :slide="slide" :index="index" is-top large-title />
     <MantraSimpleText :slide="slide" :index="index" />
     <MantraSimpleImage :slide="slide" />
     <ChapterWords :slide="slide" class="chapterWordsRoot" />
@@ -17,6 +17,8 @@
       is-reverse
       only-second
       class="mantraContentSecond"
+      back-line
+      large-title
     />
     <ChapterTexts :index="index" />
     <MantraControls
@@ -89,8 +91,5 @@ export default {
 
 .mantraContentSecond {
   padding-bottom: 130px;
-}
-.chapterWordsRoot {
-  padding-bottom: 0;
 }
 </style>

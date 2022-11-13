@@ -31,6 +31,10 @@ export default {
     padding: 120px 140px 120px 140px;
   }
 
+  @include above(large) {
+    padding: 260px 140px;
+  }
+
   p {
     max-width: 325px;
     text-align: center;

@@ -17,12 +17,12 @@
   &:before {
     content: "";
     width: 1px;
-    height: 260px;
+    height: 200px;
     background-color: $secondary;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -75%;
+    top: -60%;
     z-index: 11;
 
     @include above(big) {

@@ -112,7 +112,8 @@ export default {
     letter-spacing: 3.6px;
     margin-top: 40px;
     text-transform: uppercase;
-    font-family: "Baskerville";
+    font-family: "Baskerville" !important;
+    font-weight: 400;
 
     @include above(small) {
       font-size: 46px;
@@ -136,6 +137,7 @@ export default {
 
     span {
       color: #d10019;
+      font-family: "Baskerville" !important;
     }
   }
 

@@ -33,6 +33,36 @@ export default {
 };
 </script>
 
+<script setup>
+useHead({
+  title: "Château Clinet | Pomerol",
+  meta: [
+    {
+      name: "title",
+      lang: "fr",
+      content: "Château Clinet | Pomerol",
+    },
+    {
+      name: "title",
+      lang: "en",
+      content: "Château Clinet | Pomerol",
+    },
+    {
+      name: "description",
+      lang: "fr",
+      content:
+        "Le Château Clinet est l’un des domaines les plus prestigieux de la région viticole de Pomerol, parmi les plus belles parcelles de ce célèbre plateau.",
+    },
+    {
+      name: "description",
+      lang: "en",
+      content:
+        "Château Clinet is one of the most prestigious estates of the Pomerol wine region, set amongst the finest parcels of this well-known plateau.",
+    },
+  ],
+});
+</script>
+
 <style lang="scss" scoped>
 #hero {
   position: relative;
@@ -104,7 +134,11 @@ video {
 .portalImage {
   img {
     object-fit: cover;
-    width: 335px;
+    width: 250px;
+
+    @include above(small) {
+      width: 335px;
+    }
   }
 }
 .heading {
@@ -132,7 +166,7 @@ video {
       color: rgba($color: #ffffff, $alpha: 0.5);
       font-family: "Baskerville";
       text-transform: uppercase;
-      font-size: 20px;
+      font-size: 16px;
       letter-spacing: 2.5px;
       line-height: 23px;
       font-weight: 500;
@@ -179,7 +213,7 @@ video {
       span {
         font-family: "Baskerville";
         color: rgba($color: #ffffff, $alpha: 0.5);
-        font-size: 40px;
+        font-size: 35px;
         font-weight: 400;
         text-align: center;
         letter-spacing: 4px;

@@ -27,8 +27,9 @@
       <img :src="slide.images?.mantra_content_image_5" alt="" v-else />
       <div class="textImage">
         <div class="textImageContent">
-          <h2>
+          <h2 class="textTitleContent" :class="{ largeTitle }">
             {{ $t(`mantra-${index}-content-title-${onlySecond}`) }}
+            <br v-if="backLine" />
             <span v-if="!onlySecond">{{
               $t(`mantra-${index}-content-subtitle-${onlySecond}`)
             }}</span>
@@ -73,6 +74,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    backLine: {
+      type: Boolean,
+      default: false,
+    },
+    largeTitle: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup() {
     const { locale } = useI18n();
@@ -110,6 +119,16 @@ export default {
           @include above(large) {
             padding: 0 0 18px 0;
             font-size: 42px;
+          }
+
+          &.largeTitle {
+            &:before {
+              @include above(large) {
+                width: 82px;
+                right: -13%;
+                left: inherit;
+              }
+            }
           }
 
           &:before {
@@ -203,6 +222,15 @@ export default {
           margin-top: 0;
           //padding: 0 64px 0 0;
           font-size: 42px;
+        }
+
+        &.largeTitle {
+          &:before {
+            @include above(large) {
+              width: 82px;
+              left: -13%;
+            }
+          }
         }
 
         &:before {
@@ -372,7 +400,7 @@ export default {
       @include above(big) {
         font-size: 32px;
         margin: 64px 0 0 64px;
-        line-height: 30px;
+        line-height: 26px;
         max-width: 570px;
       }
 

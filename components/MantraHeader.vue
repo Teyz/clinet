@@ -47,7 +47,7 @@ export default {
 
 <style lang="scss" scoped>
 #chapter {
-  scroll-margin-top: 300px;
+  scroll-margin-top: 150px;
 }
 .mantraHeader {
   padding: 0 24px;
@@ -188,14 +188,13 @@ export default {
   }
 
   h2 {
-    margin: 0 auto;
     max-width: 50%;
     font-family: "Baskerville";
     color: #260f01;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 32px;
     letter-spacing: 3.9px;
-    margin: 16px auto 24px auto;
+    margin: 24px auto 24px auto;
     text-align: center;
     font-weight: 500;
     text-transform: uppercase;

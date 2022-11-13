@@ -8,7 +8,13 @@
       :slide="slide"
       red-middle-title
     />
-    <MantraContent :slide="slide" :index="index" is-top />
+    <MantraContent
+      :slide="slide"
+      :index="index"
+      is-top
+      class="mantraContent"
+      large-title
+    />
     <MantraSimpleText :slide="slide" :index="index" />
     <MantraContent
       :slide="slide"
@@ -77,5 +83,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

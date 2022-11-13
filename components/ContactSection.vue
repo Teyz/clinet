@@ -2,10 +2,10 @@
   <section class="contactRoot" id="contact">
     <img src="@/assets/img/contact.webp" alt="" />
     <div class="contactMain">
-      <div class="divider"></div>
       <div class="contactContent">
+        <div class="divider"></div>
         Nous
-        <span>Contacter</span>
+        <span class="cercle">Contacter</span>
         <p>
           16, Chemin de Feytit <br />
           33500 POMEROL, France
@@ -28,6 +28,34 @@ export default {
   name: "ContactSection",
   setup() {},
 };
+</script>
+
+<script setup>
+useHead({
+  title: "Clinet | Contact",
+  meta: [
+    {
+      name: "title",
+      lang: "fr",
+      content: "Clinet | Contact",
+    },
+    {
+      name: "title",
+      lang: "en",
+      content: "Clinet | Contact",
+    },
+    {
+      name: "description",
+      lang: "fr",
+      content: "Coordonnées de Château Clinet, Pomerol.",
+    },
+    {
+      name: "description",
+      lang: "en",
+      content: "Contact details for Château Clinet, Pomerol.",
+    },
+  ],
+});
 </script>
 
 <style lang="scss" scoped>
@@ -81,12 +109,13 @@ img {
   height: 100%;
 
   .divider {
-    background-color: white;
+    background-color: #cecece;
     width: 1px;
     height: 143px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    margin-bottom: 60px;
   }
 
   .contactContent {
@@ -115,6 +144,19 @@ img {
       font-style: italic;
       text-transform: capitalize;
       margin-bottom: 64px;
+
+      position: relative;
+
+      &:before {
+        content: "";
+        background-color: white;
+        border-radius: 1000px;
+        position: absolute;
+        bottom: -70%;
+        left: 50%;
+        width: 4px;
+        height: 4px;
+      }
     }
 
     p {
@@ -132,7 +174,7 @@ img {
 
   p {
     color: white;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 18px;
     font-family: "Baskerville";
     font-weight: 500;
@@ -142,7 +184,7 @@ img {
 
     span {
       color: white;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 18px;
       font-family: "Baskerville";
       font-weight: 500;

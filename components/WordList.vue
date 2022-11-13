@@ -89,10 +89,13 @@ export default {
   }
 
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    @include above(big) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
     li {
       font-family: "Baskerville";
       color: #333333;
@@ -115,15 +118,17 @@ export default {
       }
 
       &:after {
-        content: "";
-        width: 5px;
-        height: 5px;
-        border-radius: 1000px;
-        position: absolute;
-        right: -20px;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: #8080804d;
+        @include above(small) {
+          content: "";
+          width: 5px;
+          height: 5px;
+          border-radius: 1000px;
+          position: absolute;
+          right: -20px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: #8080804d;
+        }
       }
 
       @include above(big) {

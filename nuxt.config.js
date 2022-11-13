@@ -53,7 +53,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Château Clinet | Vins AOC de Bordeaux",
+      title: "Château Clinet | Pomerol",
       htmlAttrs: {
         lang: "fr,en",
       },
@@ -61,24 +61,24 @@ export default defineNuxtConfig({
         {
           name: "title",
           lang: "fr",
-          content: "Château Clinet | Vins AOC de Bordeaux",
+          content: "Château Clinet | Pomerol",
         },
         {
           name: "title",
           lang: "en",
-          content: "Ronan by Clinet | Bordeaux AOC Wines",
+          content: "Château Clinet | Pomerol",
         },
         {
           name: "description",
           lang: "fr",
           content:
-            "Ronan by Clinet est un vin AOC de Bordeaux séduisant et précis, produit par l’équipe du Château Clinet, Grand Cru historique, main dans la main avec des vignerons partenaires consciencieux.",
+            "Le Château Clinet est l’un des domaines les plus prestigieux de la région viticole de Pomerol, parmi les plus belles parcelles de ce célèbre plateau.",
         },
         {
           name: "description",
           lang: "en",
           content:
-            "Ronan by Clinet is a Bordeaux AOC wine that balances seduction with precision, produced by the team of Château Clinet, an historic Grand Cru, in partnership with conscientious growers.",
+            "Château Clinet is one of the most prestigious estates of the Pomerol wine region, set amongst the finest parcels of this well-known plateau.",
         },
         {
           name: "format-detection",

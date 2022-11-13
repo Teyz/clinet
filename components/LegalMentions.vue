@@ -309,6 +309,34 @@
   </div>
 </template>
 
+<script setup>
+useHead({
+  title: "Clinet | Mentions Légales",
+  meta: [
+    {
+      name: "title",
+      lang: "fr",
+      content: "Clinet | Mentions Légales",
+    },
+    {
+      name: "title",
+      lang: "en",
+      content: "Clinet | Credits and Legal Notice",
+    },
+    {
+      name: "description",
+      lang: "fr",
+      content: "Crédits et mentions légales pour www.chateauclinet.com",
+    },
+    {
+      name: "description",
+      lang: "en",
+      content: "Credits and legal notice for www.chateauclinet.com",
+    },
+  ],
+});
+</script>
+
 <style lang="scss" scoped>
 .mentionsLegalesRoot {
   height: 100%;

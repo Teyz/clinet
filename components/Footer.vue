@@ -131,6 +131,7 @@ footer {
   }
 
   p {
+    text-transform: uppercase;
     @include typo-text-footer-mobile;
 
     @include above(big) {
