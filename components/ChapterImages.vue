@@ -1,6 +1,6 @@
 <template>
   <section class="chaperImagesRoot">
-    <img :src="slide.images?.chapter_images_1" alt="" />
+    <img :src="slide.images?.chapter_images_1" alt="" class="firstImage" />
     <div>
       <img :src="slide.images?.chapter_images_2" alt="" class="smallImage" />
       <img :src="slide.images?.chapter_images_3" alt="" class="mediumImage" />
@@ -25,10 +25,17 @@ export default {
   @include above(big) {
     padding: 0 160px;
   }
+
+  .firstImage {
+    margin: 0 auto;
+    max-width: 1322px;
+    width: 100%;
+  }
+
   img {
     object-fit: cover;
     display: block;
-    max-width: 100%;
+    width: 100%;
   }
 
   div {
@@ -43,9 +50,10 @@ export default {
 
       @include above(big) {
         display: block;
-        width: 400px;
-        height: 400px;
+        width: 528px;
+        height: 515px;
         margin-right: 12px;
+        object-fit: cover;
       }
       @include above(large) {
         width: 520px;
@@ -55,8 +63,9 @@ export default {
 
     .mediumImage {
       @include above(big) {
-        width: 720px;
-        height: 400px;
+        width: 790px;
+        height: 515px;
+        object-fit: cover;
       }
       @include above(large) {
         width: 790px;

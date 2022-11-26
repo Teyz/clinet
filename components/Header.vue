@@ -217,16 +217,17 @@ header {
       line-height: 16px;
       text-transform: uppercase;
       cursor: pointer;
+      color: #707070;
 
       &.lang {
         &:hover {
-          color: $secondary;
+          color: #ce1313;
         }
       }
 
       &.isEnglishActive,
       &.isFrenchActive {
-        color: $secondary;
+        color: #ce1313;
       }
     }
   }
@@ -247,7 +248,7 @@ header {
       transition: all 0.2s ease;
 
       &:hover {
-        color: $secondary;
+        color: #ce1313;
       }
 
       a {
@@ -257,6 +258,11 @@ header {
         letter-spacing: 2.8px;
         line-height: 16px;
         text-transform: uppercase;
+        color: #707070;
+
+        &:hover {
+          color: #ce1313;
+        }
       }
 
       &:first-child {
@@ -342,7 +348,7 @@ header {
       // no need hover effect on mobile.
       @media (min-width: 1024px) {
         span:first-of-type {
-          width: 26px;
+          width: 22px;
         }
 
         span:last-of-type {

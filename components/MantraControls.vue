@@ -174,9 +174,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 60%;
 
   @include above(big) {
     padding: 20px 380px;
+    max-width: 100%;
   }
 
   &.isSmall {

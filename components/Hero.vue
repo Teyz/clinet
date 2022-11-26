@@ -160,7 +160,8 @@ export default {
 
   a {
     position: relative;
-    font-family: "SchnyderS";
+    font-weight: 400;
+    font-family: "Baskerville" !important;
     color: #260f01;
     line-height: 11px;
     font-weight: 500;

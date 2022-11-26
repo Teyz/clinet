@@ -32,6 +32,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-weight: 400;
+  font-style: italic;
+  font-family: "Baskerville";
+  src: url("@/assets/fonts/Baskerville Italic.ttf") format("truetype");
+  font-display: swap;
+}
+
 h3 {
   text-transform: lowercase;
 }

@@ -17,7 +17,7 @@
       </div>
       <p class="downloadDesktop">TÉLÉCHARGER LE DOSSIER DE PRESSE</p>
       <p class="downloadMobile">
-        TÉLÉCHARGER <br /><span>DOSSIER DE PRESSE></span>
+        TÉLÉCHARGER <br /><span>DOSSIER DE PRESSE</span>
       </p>
     </div>
   </section>

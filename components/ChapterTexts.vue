@@ -67,6 +67,8 @@ export default {
     font-size: 22px;
     line-height: 25px;
     position: relative;
+    max-width: 350px;
+    margin: 0 auto;
 
     &:before {
       content: "";
@@ -94,6 +96,8 @@ export default {
     font-size: 12px;
     line-height: 17px;
     text-transform: uppercase;
+    max-width: 350px;
+    margin: 80px auto 0 auto;
 
     @include above(big) {
       font-size: 18px;

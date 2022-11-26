@@ -33,9 +33,9 @@
             <span v-if="!onlySecond">{{
               $t(`mantra-${index}-content-subtitle-${onlySecond}`)
             }}</span>
-            <template v-else>
+            <span v-else class="alinea">
               {{ $t(`mantra-${index}-content-subtitle-${onlySecond}`) }}
-            </template>
+            </span>
           </h2>
           <p v-if="onlySecond">
             {{ $t(`mantra-${index}-content-text-2-second`) }}
@@ -198,7 +198,8 @@ export default {
         }
       }
       h2 {
-        font-family: "Baskerville";
+        font-family: "Baskerville" !important;
+        font-weight: 400;
         text-transform: uppercase;
         font-size: 20px;
         letter-spacing: 4px;
@@ -218,6 +219,11 @@ export default {
           margin-left: 24px;
         }
 
+        .alinea {
+          color: #260f01;
+          margin-left: 32px;
+        }
+
         @include above(large) {
           margin-top: 0;
           //padding: 0 64px 0 0;
@@ -226,6 +232,7 @@ export default {
 
         &.largeTitle {
           &:before {
+            left: -17%;
             @include above(large) {
               width: 82px;
               left: -13%;
@@ -250,11 +257,13 @@ export default {
 
           @include above(large) {
             width: 82px;
-            left: -20%;
+            left: -16%;
           }
         }
 
         span {
+          font-family: "Baskerville" !important;
+          font-weight: 400;
           color: #ce1313;
         }
       }
@@ -268,6 +277,7 @@ export default {
 
         @include above(big) {
           padding: 0;
+          line-height: 18px;
           font-size: 16px;
           margin: 0 auto;
           max-width: 500px;
@@ -277,7 +287,7 @@ export default {
 
         @include above(large) {
           font-size: 18px;
-          line-height: 18px;
+          line-height: 20px;
           margin-top: 10px;
           max-width: 500px;
         }
@@ -296,13 +306,14 @@ export default {
   }
 
   .tagline {
-    font-family: "Baskerville";
+    font-family: "Baskerville" !important;
     text-align: right;
     font-size: 15px;
     letter-spacing: 3px;
     line-height: 15px;
     margin: 0 32px 16px 0;
     span {
+      font-family: "Baskerville" !important;
       font-size: 15px;
       line-height: 15px;
       letter-spacing: 3px;
@@ -310,14 +321,16 @@ export default {
       color: #ce1313;
     }
     @include above(big) {
-      font-family: "Baskerville";
+      font-family: "Baskerville" !important;
       font-size: 24px;
       line-height: 28px;
       letter-spacing: 5.6px;
       margin-bottom: 64px;
 
       span {
+        font-family: "Baskerville" !important;
         font-size: 24px;
+        font-style: italic;
         line-height: 28px;
         letter-spacing: 5.6px;
       }

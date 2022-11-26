@@ -10,7 +10,7 @@
     <MantraContent :slide="slide" :index="index" is-top />
     <MantraSimpleText :index="index" :slide="slide" />
     <MantraContent :slide="slide" :index="index" is-reverse only-second />
-    <MantraSimpleText :index="index" :slide="slide" />
+    <MantraSimpleText :index="index + 1" :slide="slide" />
     <ChapterImages :slide="slide" />
     <ChapterTexts :index="index" />
     <MantraControls
