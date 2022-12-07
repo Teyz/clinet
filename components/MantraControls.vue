@@ -145,6 +145,8 @@ export default {
     },
   },
   setup(props, { emit }) {
+    const mantraHeader = ref(null);
+    useScroll(mantraHeader, { behavior: 'smooth' })
     const slide = computed(() => `slide-${props.currentSlide}`);
     const nextSlide = () => {
       const chapter = document.getElementById("chapter");

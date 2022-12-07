@@ -37,9 +37,15 @@
               {{ $t(`mantra-${index}-content-subtitle-${onlySecond}`) }}
             </span>
           </h2>
-          <p v-if="onlySecond">
+          <p v-if="onlySecond && !redText">
             {{ $t(`mantra-${index}-content-text-2-second`) }}
           </p>
+          <div v-else-if="onlySecond && redText">
+            <p class="redText"> {{ $t(`mantra-${index}-content-text-2-second`) }} <span>{{ $t(`mantra-${index}-content-text-2-red`) }}</span>{{ $t(`mantra-${index}-content-text-2-second-p2`) }} <span>{{ $t(`mantra-${index}-content-text-2-red`) }}</span> {{ $t(`mantra-${index}-content-text-2-second-p3`) }} <span>{{ $t(`mantra-${index}-content-text-2-red`) }}</span></p>
+          </div>
+          <div v-else-if="redText">
+            <p class="redText"> {{ $t(`mantra-${index}-content-text-2`) }} <span>{{ $t(`mantra-${index}-content-text-2-red`) }}</span>{{ $t(`mantra-${index}-content-text-2-red-suite`) }}</p>
+          </div>
           <p v-else>{{ $t(`mantra-${index}-content-text-2`) }}</p>
         </div>
         <img
@@ -82,6 +88,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    redText: {
+      type: Boolean,
+      default: false
+    }
   },
   setup() {
     const { locale } = useI18n();
@@ -423,6 +433,12 @@ export default {
         margin: 0;
         max-width: 400px;
       }
+    }
+  }
+
+  .redText{
+    span{
+      color : #CE1313;
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="mantraHeader" id="chapter">
+  <div class="mantraHeader" id="chapter" ref="mantraHeader">
     <span class="sliderStep">{{ $t("chapter") }} {{ currentSlide + 1 }}/5</span>
     <h2>
       {{ $t(`mantra-${index}-title`) }}
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { useWindowScroll } from '@vueuse/core'
 export default {
   name: "MantraHeader",
   props: {
