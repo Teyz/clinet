@@ -1,5 +1,5 @@
 <template>
-  <div class="movieRoot">
+  <div class="movieRoot" id="movieRoot">
     <video controls width="1156" id="movie">
       <source src="@/assets/img/movie.mp4" type="video/mp4" />
     </video>

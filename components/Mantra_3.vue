@@ -1,5 +1,5 @@
 <template>
-  <div class="mantraRoot" ref="el">
+  <div class="mantraRoot" ref="el" id="chapter">
     <MantraHeader
       v-bind:currentSlide="currentSlide"
       @on-next="() => nextSlide()"
@@ -83,6 +83,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#chapter {
+  scroll-margin-top: 0px;
+}
 .mantraContentRoot {
   h3 {
     bottom: 0;

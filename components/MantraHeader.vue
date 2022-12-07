@@ -1,5 +1,5 @@
 <template>
-  <div class="mantraHeader" id="chapter" ref="mantraHeader">
+  <div class="mantraHeader" ref="mantraHeader">
     <span class="sliderStep">{{ $t("chapter") }} {{ currentSlide + 1 }}/5</span>
     <h2>
       {{ $t(`mantra-${index}-title`) }}
@@ -47,9 +47,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#chapter {
-  scroll-margin-top: 150px;
-}
 .mantraHeader {
   padding: 0 24px;
   display: flex;
