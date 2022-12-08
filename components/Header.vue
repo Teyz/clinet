@@ -106,7 +106,7 @@ export default {
       }
     };
 
-    onBeforeMount(() => {
+    onMounted(() => {
       const browserLang = (
         window.navigator
           ? window.navigator.language ||
@@ -120,6 +120,7 @@ export default {
         isEnglishActive.value = true;
         isFrenchActive.value = false;
         locale.value = browserLang;
+        console.log(isEnglishActive.value);
       } else if (browserLang === "fr") {
         isEnglishActive.value = false;
         isFrenchActive.value = true;
