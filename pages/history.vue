@@ -1,5 +1,8 @@
 <template>
   <NuxtLayout name="custom">
+    <Head>
+      <Title>{{$t('history') }}</Title>
+    </Head>
     <Hero />
     <Movie />
     <MantraSlider />
@@ -39,8 +42,8 @@ export default {
 </script>
 
 <script setup>
+
 useHead({
-  title: "Clinet | L'Histoire de Clinet",
   meta: [
     {
       name: "title",

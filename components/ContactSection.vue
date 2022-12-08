@@ -32,7 +32,6 @@ export default {
 
 <script setup>
 useHead({
-  title: "Clinet | Contact",
   meta: [
     {
       name: "title",

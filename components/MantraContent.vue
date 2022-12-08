@@ -33,7 +33,10 @@
             <span v-if="!onlySecond">{{
               $t(`mantra-${index}-content-subtitle-${onlySecond}`)
             }}</span>
-            <span v-else class="alinea">
+            <span v-if="alinea" class="alinea">
+              {{ $t(`mantra-${index}-content-subtitle-${onlySecond}`) }}
+            </span>
+            <span v-else class="black">
               {{ $t(`mantra-${index}-content-subtitle-${onlySecond}`) }}
             </span>
           </h2>
@@ -89,6 +92,10 @@ export default {
       default: false,
     },
     redText: {
+      type: Boolean,
+      default: false
+    },
+    alinea: {
       type: Boolean,
       default: false
     }
@@ -154,7 +161,7 @@ export default {
               left: inherit;
               width: 82px;
               top: 35%;
-              right: -20%;
+              right: -13%;
             }
           }
         }
@@ -232,6 +239,10 @@ export default {
         .alinea {
           color: #260f01;
           margin-left: 32px;
+        }
+
+        .black{
+           color: #260f01;
         }
 
         @include above(large) {

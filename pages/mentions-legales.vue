@@ -1,5 +1,8 @@
 <template>
   <NuxtLayout name="credits-layout">
+    <Head>
+      <Title>{{$t('legales') }}</Title>
+    </Head>
     <LegalMentions />
   </NuxtLayout>
 </template>

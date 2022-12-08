@@ -311,7 +311,6 @@
 
 <script setup>
 useHead({
-  title: "Clinet | Mentions Légales",
   meta: [
     {
       name: "title",

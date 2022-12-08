@@ -117,12 +117,12 @@ export default {
         .toLowerCase()
         .substr(0, 2);
       if (browserLang === "en") {
-        isEnglishActive.value === true;
-        isFrenchActive.value === false;
+        isEnglishActive.value = true;
+        isFrenchActive.value = false;
         locale.value = browserLang;
       } else if (browserLang === "fr") {
-        isEnglishActive.value === false;
-        isFrenchActive.value === true;
+        isEnglishActive.value = false;
+        isFrenchActive.value = true;
         locale.value = browserLang;
       }
     });
