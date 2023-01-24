@@ -23,7 +23,7 @@ export default {
 <style lang="scss" scoped>
 .chaperImagesRoot {
   @include above(big) {
-    padding: 0 160px;
+    padding: 0 226px;
   }
 
   .firstImage {

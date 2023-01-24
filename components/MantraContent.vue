@@ -113,7 +113,7 @@ export default {
 <style lang="scss" scoped>
 .chapterContentRoot {
   @include above(big) {
-    padding: 0 160px;
+    padding: 0 226px;
   }
 
   &.isReverse {
@@ -228,7 +228,11 @@ export default {
         margin-left: 12px;
 
         @include above(big) {
-          font-size: 32px;
+          font-size: 40px;
+        }
+
+        @include above(large) {
+          font-size: 42px;
           letter-spacing: 9.2px;
           line-height: 52px;
           text-align: left;
@@ -298,7 +302,7 @@ export default {
 
         @include above(big) {
           padding: 0;
-          line-height: 18px;
+          line-height: 20px;
           font-size: 16px;
           margin: 0 auto;
           max-width: 500px;
@@ -308,7 +312,7 @@ export default {
 
         @include above(large) {
           font-size: 18px;
-          line-height: 20px;
+          line-height: 24px;
           margin-top: 10px;
           max-width: 500px;
         }
@@ -432,15 +436,16 @@ export default {
       }
 
       @include above(big) {
-        font-size: 32px;
+        font-size: 28px;
         margin: 64px 0 0 64px;
-        line-height: 26px;
+        line-height: 28px;
         max-width: 570px;
       }
 
       @include above(large) {
         margin: 64px 0 0 64px !important;
-        font-size: 20px;
+        font-size: 30px;
+        line-height: 38px;
         margin: 0;
         max-width: 400px;
       }

@@ -1,5 +1,6 @@
 <template>
   <NuxtLayout name="custom">
+    <ScrollToTop />
     <Head>
       <Title>{{$t('history') }}</Title>
     </Head>

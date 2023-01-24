@@ -6,6 +6,7 @@
       @on-prev="() => prevSlide()"
       :index="index"
       :slide="slide"
+      max-width
     />
     <MantraContent :slide="slide" :index="index" is-top />
     <MantraSimpleText :slide="slide" :index="index" />
@@ -81,6 +82,12 @@ export default {
 .mantraContentRoot {
   h3 {
     bottom: 0;
+  }
+}
+
+.mantraHeader {
+  h2 {
+    max-width: 48% !important;
   }
 }
 </style>

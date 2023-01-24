@@ -1,7 +1,7 @@
 <template>
-  <div class="mantraHeader" ref="mantraHeader">
+  <div class="mantraHeader" ref="mantraHeader" id="mantraHeader">
     <span class="sliderStep">{{ $t("chapter") }} {{ currentSlide + 1 }}/5</span>
-    <h2>
+    <h2 :class="{maxWidth}">
       {{ $t(`mantra-${index}-title`) }}
     </h2>
     <MantraControls
@@ -31,6 +31,10 @@ export default {
       type: Object,
       default: () => {},
     },
+    maxWidth: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props, { emit }) {
     const nextSlide = () => {
@@ -196,6 +200,10 @@ export default {
     text-align: center;
     font-weight: 500;
     text-transform: uppercase;
+
+    &.maxWidth {
+      max-width: 48%;
+    }
 
     @include above(small) {
       margin: 42px 160px 40px 160px;

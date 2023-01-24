@@ -99,6 +99,7 @@ export default {
 .mantraSliderRoot {
   position: relative;
   overflow: hidden;
+  padding: 0 66px;
 }
 .carousel__prev--in-active,
 .carousel__next--in-active {
