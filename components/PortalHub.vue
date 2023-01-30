@@ -85,7 +85,7 @@ useHead({
   &:after {
     content: "";
     position: absolute;
-    background-color: #8f8f8d;
+    background-color: #FFFFFF;
     opacity: 0.5;
     width: 1px;
     height: 100px;

@@ -17,9 +17,9 @@
       </div>
       <ul class="nav">
         <!-- <li><a href="#movie">Film</a></li> -->
-        <li @click="toggleMenu"><a href="#chapter">Accueil</a></li>
-        <li @click="toggleMenu"><a href="#contact">Histoire</a></li>
-        <li @click="toggleMenu"><a href="#contact">Contact</a></li>
+        <li @click="toggleMenu"><nuxt-link :to="{ path: '/history' }">Histoire</nuxt-link></li>
+        <li @click="toggleMenu"><nuxt-link :to="{ path: '/' }">Sensation</nuxt-link></li>
+        <li @click="toggleMenu"><nuxt-link :to="{ path: '/contact' }">Contact</nuxt-link></li>
       </ul>
     </div>
     <div class="footerContainer">
