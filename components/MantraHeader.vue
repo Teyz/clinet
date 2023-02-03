@@ -60,6 +60,7 @@ export default {
   position: relative;
   margin-bottom: 0;
   margin: 160px 0 148px 0;
+  text-align: center;
 
   @include above(small) {
     padding: 0 160px;
@@ -190,7 +191,6 @@ export default {
   }
 
   h2 {
-    max-width: 50%;
     font-family: "Baskerville";
     color: #260f01;
     font-size: 26px;
@@ -201,16 +201,16 @@ export default {
     font-weight: 500;
     text-transform: uppercase;
 
-    &.maxWidth {
-      max-width: 48%;
-    }
-
     @include above(small) {
       margin: 42px 160px 40px 160px;
       font-size: 44px;
       line-height: 46px;
       letter-spacing: 8.8px;
       max-width: 40%;
+
+          &.maxWidth {
+      max-width: 48%;
+    }
     }
   }
 }

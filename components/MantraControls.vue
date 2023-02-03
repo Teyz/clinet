@@ -145,20 +145,18 @@ export default {
     },
   },
   setup(props, { emit }) {
-    const mantraHeader = ref(null);
-    useScroll(mantraHeader, { behavior: 'smooth' })
     const slide = computed(() => `slide-${props.currentSlide}`);
     const nextSlide = () => {
-      const chapter = document.getElementById("chapter");
-      chapter.scrollIntoView();
+      const chapter = document.getElementById("mantraHeader");
+      chapter.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
       setTimeout(() => {
         emit("onNext");
       }, 1000);
     };
 
     const prevSlide = () => {
-      const chapter = document.getElementById("chapter");
-      chapter.scrollIntoView();
+      const chapter = document.getElementById("mantraHeader");
+      chapter.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'center' });
       setTimeout(() => {
         emit("onPrev");
       }, 1000);
