@@ -36,7 +36,7 @@
             <span v-if="alinea" class="alinea">
               {{ $t(`mantra-${index}-content-subtitle-${onlySecond}`) }}
             </span>
-            <span v-else class="black">
+            <span v-if="noRedTitle" class="black">
               {{ $t(`mantra-${index}-content-subtitle-${onlySecond}`) }}
             </span>
           </h2>
@@ -98,6 +98,10 @@ export default {
     alinea: {
       type: Boolean,
       default: false
+    },
+    noRedTitle: {
+      type: Boolean,
+      default: false,
     }
   },
   setup() {
@@ -454,6 +458,7 @@ export default {
 
   .redText{
     span{
+      font-family: "Baskerville" !important;
       color : #CE1313;
     }
   }

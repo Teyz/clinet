@@ -11,7 +11,7 @@
     <ChapterWords :slide="slide" />
     <ChapterImages :slide="slide" />
     <MantraSimpleText :index="index" :slide="slide" />
-    <MantraContent :slide="slide" :index="index" is-reverse only-second red-text/>
+    <MantraContent :slide="slide" :index="index" is-reverse only-second red-text no-red-title/>
     <ChapterTexts :index="index" />
     <MantraControls
       @on-next="() => nextSlide()"

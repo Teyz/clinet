@@ -25,6 +25,8 @@ export default {
   padding: 0 24px 104px 24px;
   @include above(big) {
     padding: 144px 104px;
+    max-width: 80%;
+    margin: 0 auto;
   }
   ul {
     display: flex;
