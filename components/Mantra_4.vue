@@ -21,6 +21,8 @@
       :index="index"
       is-reverse
       only-second
+      red-text
+      no-red-title
       class="mantraContentSecond"
     />
     <ChapterTexts :index="index" no-first-text />

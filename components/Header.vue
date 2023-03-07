@@ -180,7 +180,7 @@ header {
     transition: all 0.5s ease;
     animation: smoothScroll 0.5s forwards;
     position: fixed;
-    background-color: $primary;
+    background-color: #fff;
     box-shadow: 0px 3px 6px #00000006;
   }
 

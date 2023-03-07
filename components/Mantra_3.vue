@@ -19,6 +19,8 @@
       class="mantraContentSecond"
       back-line
       large-title
+      red-text
+      no-red-title
     />
     <ChapterTexts :index="index" />
     <MantraControls

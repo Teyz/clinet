@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import { useWindowScroll } from '@vueuse/core'
 export default {
   name: "MantraHeader",
   props: {
@@ -63,8 +62,10 @@ export default {
   text-align: center;
 
   @include above(small) {
-    padding: 0 160px;
-    margin: 250px 0 360px 0;
+    padding: 0;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
   }
 
   &:after {
@@ -84,7 +85,7 @@ export default {
     }
 
     @include above(big) {
-      bottom: -80%;
+      bottom: 10%;
       height: 180px;
       display: block;
     }

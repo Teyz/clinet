@@ -8,11 +8,11 @@
       :slide="slide"
       max-width
     />
-    <MantraContent :slide="slide" :index="index" is-top />
+    <MantraContent :slide="slide" :index="index" is-top class="mantraContent2"/>
     <MantraSimpleText :slide="slide" :index="index" />
     <MantraSimpleImage :slide="slide" />
     <ChapterWords :slide="slide" />
-    <MantraContent :slide="slide" :index="index" is-reverse only-second />
+    <MantraContent :slide="slide" :index="index" is-reverse only-second red-text no-red-title/>
     <ChapterTexts :index="index" />
     <MantraControls
       @on-next="() => nextSlide()"
@@ -78,6 +78,13 @@ export default {
 <style lang="scss" scoped>
 #chapter {
   scroll-margin-top: 200px;
+}
+.mantraContent2{
+  .textTitleContent{
+    &:before{
+      left: -25% !important;
+    }
+  }
 }
 .mantraContentRoot {
   h3 {

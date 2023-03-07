@@ -26,7 +26,7 @@
       />
       <img :src="slide.images?.mantra_content_image_5" alt="" v-else />
       <div class="textImage">
-        <div class="textImageContent">
+        <div class="textImageContent" :class="mantraClass">
           <h2 class="textTitleContent" :class="{ largeTitle }">
             {{ $t(`mantra-${index}-content-title-${onlySecond}`) }}
             <br v-if="backLine" />
@@ -104,12 +104,16 @@ export default {
       default: false,
     }
   },
-  setup() {
+  setup(props) {
     const { locale } = useI18n();
 
     const lang = computed(() => locale.value);
 
-    return { locale, lang };
+    const mantraClass = computed(() => {
+      return `mantraContent${props.index}`;
+    })
+
+    return { locale, lang, mantraClass };
   },
 };
 </script>
@@ -128,6 +132,15 @@ export default {
         @include above(big) {
           margin-left: 0px;
           margin-right: 12px;
+        }
+
+        .mantraContent2, .mantraContent3, .mantraContent4{
+          h2{
+            &:before{
+              left: inherit !important;
+              right: -20% !important;
+            }
+          }
         }
 
         h2 {
@@ -216,6 +229,14 @@ export default {
       .textImageContent {
         @include above(large) {
           margin-bottom: 64px;
+        }
+
+        &.mantraContent2, &.mantraContent3, &.mantraContent4{
+          h2{
+            &:before{
+              left: -25%;
+            }
+          }
         }
       }
       h2 {

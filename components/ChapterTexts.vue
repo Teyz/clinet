@@ -3,7 +3,7 @@
     <p class="smallText" v-if="!noFirstText">
       {{ $t(`chapter-${index}-texts-1`) }}
     </p>
-    <p class="bigText">{{ $t(`chapter-${index}-texts-2`) }}</p>
+    <p class="bigText">{{ $t(`chapter-${index}-texts-2`) }} <span>{{ $t(`chapter-${index}-texts-2-red`) }}</span> </p>
   </section>
 </template>
 
