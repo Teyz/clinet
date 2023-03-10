@@ -3,7 +3,7 @@
     <p class="smallText" v-if="!noFirstText">
       {{ $t(`chapter-${index}-texts-1`) }}
     </p>
-    <p class="bigText">{{ $t(`chapter-${index}-texts-2`) }} <span>{{ $t(`chapter-${index}-texts-2-red`) }}</span> </p>
+    <p class="bigText">{{ $t(`chapter-${index}-texts-2`) }} <span :class="{redText}">{{ $t(`chapter-${index}-texts-2-red`) }}</span> </p>
   </section>
 </template>
 
@@ -19,6 +19,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    redText: {
+      type: Boolean,
+      default: false
+    }
   },
 };
 </script>
@@ -91,6 +95,8 @@ export default {
   }
 
   .bigText {
+    font-family: "Baskerville";
+    font-weight: 500;
     margin-top: 80px;
     text-align: center;
     font-size: 12px;
@@ -98,6 +104,15 @@ export default {
     text-transform: uppercase;
     max-width: 350px;
     margin: 80px auto 0 auto;
+
+    span{
+      font-family: "Baskerville";
+      font-weight: 500;
+
+      &.redText{
+        color: #CE1313;
+      }
+    }
 
     @include above(big) {
       font-size: 18px;

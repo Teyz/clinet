@@ -9,7 +9,7 @@
     />
     <MantraContent :slide="slide" :index="index" is-top />
     <MantraSimpleText :index="index" :slide="slide" />
-    <MantraContent :slide="slide" :index="index" is-reverse only-second red-text no-red-title/>
+    <MantraContent :slide="slide" :index="index" is-reverse only-second alinea back-line/>
     <MantraSimpleText :index="index + 1" :slide="slide" />
     <ChapterImages :slide="slide" />
     <ChapterTexts :index="index" />

@@ -7,7 +7,7 @@
       :index="index"
       :slide="slide"
     />
-    <MantraContent :slide="slide" :index="index" is-top large-title />
+    <MantraContent :slide="slide" :index="index" is-top large-title back-line no-red-title/>
     <MantraSimpleText :slide="slide" :index="index" />
     <MantraSimpleImage :slide="slide" />
     <ChapterWords :slide="slide" class="chapterWordsRoot" />
@@ -19,10 +19,9 @@
       class="mantraContentSecond"
       back-line
       large-title
-      red-text
       no-red-title
     />
-    <ChapterTexts :index="index" />
+    <ChapterTexts :index="index" red-text/>
     <MantraControls
       @on-next="() => nextSlide()"
       @on-prev="() => prevSlide()"

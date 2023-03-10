@@ -14,6 +14,8 @@
       is-top
       class="mantraContent"
       large-title
+      back-line
+      no-red-title
     />
     <MantraSimpleText :slide="slide" :index="index" />
     <MantraContent
@@ -21,8 +23,8 @@
       :index="index"
       is-reverse
       only-second
-      red-text
       no-red-title
+      back-line
       class="mantraContentSecond"
     />
     <ChapterTexts :index="index" no-first-text />

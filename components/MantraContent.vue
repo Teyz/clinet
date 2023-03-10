@@ -30,7 +30,7 @@
           <h2 class="textTitleContent" :class="{ largeTitle }">
             {{ $t(`mantra-${index}-content-title-${onlySecond}`) }}
             <br v-if="backLine" />
-            <span v-if="!onlySecond">{{
+            <span v-if="!onlySecond" class="onlySecond">{{
               $t(`mantra-${index}-content-subtitle-${onlySecond}`)
             }}</span>
             <span v-if="alinea" class="alinea">
@@ -139,6 +139,21 @@ export default {
             &:before{
               left: inherit !important;
               right: -20% !important;
+
+              @include above(large) {
+                left: inherit !important;
+                right: -12% !important;
+              }
+            }
+          }
+        }
+
+        .mantraContent3, .mantraContent4 {
+          h2{
+            span{
+              &.black{
+                margin-left: 72px;
+              }
             }
           }
         }
@@ -235,9 +250,51 @@ export default {
           h2{
             &:before{
               left: -25%;
+
+              @include above(large){
+                left: -12%;
+              }
             }
           }
         }
+
+        &.mantraContent3, &.mantraContent4{
+
+          h2{
+            margin-left: 48px;
+
+            &:before{
+              left: -18%;
+
+              @include above(big){
+                left: -18%;
+              }
+
+              @include above(large){
+                left: -18%;
+              }
+            }
+          }
+          .onlySecond{
+            display: none;
+          }
+        }
+
+        &.mantraContent4{
+
+          h2{
+            margin-left: 48px;
+
+            .black{
+              margin-left: 72px;
+            }
+          }
+          .onlySecond{
+            display: none;
+          }
+        }
+
+
       }
       h2 {
         font-family: "Baskerville" !important;
